@@ -1,0 +1,8 @@
+// export const GET_FOOD = 'GET_FOOD'OD'
+// export const DELETE_FOOD = 'DELETE_FOOD'
+export const ADD_FOOD = 'ADD_FOOD'
+export const UPDATE_CHECKOUT = 'UPDATE_CHECKOUT'
+export const GET_CHECKOUT= 'GET_CHECKOUT'
+export const CANCEL_CHECKOUT = 'CANCEL_CHECKOUT'
+export const SET_ALERT = 'SET_ALERT'
+export const REMOVE_ALERT = 'REMOVE_ALERT'
