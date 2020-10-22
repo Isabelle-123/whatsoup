@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import AlertContext from '../../context/alert/alertContext'
-//import Alert from '../alert/Alert'
+import Alert from '../alert/Alert'
 //import { createGlobalStyle } from 'styled-components'
 
 
 const ShowFood = (props) => {
     const checkoutContext = useContext(CheckoutContext)
-    const { addFood, updateCheckout } = checkoutContext
+    const { addFood } = checkoutContext
 
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
@@ -26,9 +26,7 @@ const ShowFood = (props) => {
 
     return (
         <>
-            {/* <Alert type={type} name={name} price={price} /> */}
-
-
+       {/* <Alert type={type} name={name} price={price} />  */}
 
             <div>
                 <ul className={menuStyle.cards}>

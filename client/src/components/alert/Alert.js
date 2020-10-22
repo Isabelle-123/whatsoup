@@ -24,7 +24,7 @@ const StyleAlert = styled.div`
     background: yellow;
     ${'' /* z-index: 1000;
     margin-top: -300px; */}
-    height: 100vh;
+    ${'' /* height: 100vh; */}
   
   }
 

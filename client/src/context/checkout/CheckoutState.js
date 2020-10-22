@@ -30,7 +30,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
     }
     
     try {
-      const res = await axios.post('https://ey-whatsoup.firebaseio.com/order.json', order, config )
+      const res = await axios.post('https://whatsoup-7c207.firebaseio.com/order.json/', order, config )
       dispatch({ type: ADD_FOOD, payload: (res.data) })
 
     } catch (err) {
@@ -44,7 +44,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
   // Get checkout
   const getCheckout = async () => {
     try {
-      let res = await axios.get('https://ey-whatsoup.firebaseio.com/order.json')
+      let res = await axios.get('https://whatsoup-7c207.firebaseio.com/order.json/')
         
       const orders = [];
         for (let key in res.data) {
@@ -68,7 +68,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
   // Delete checkout
   const cancelCheckout = async id => {
     try {
-      await axios.delete(`https://ey-whatsoup.firebaseio.com/order.json/`);
+      await axios.delete('https://whatsoup-7c207.firebaseio.com/order.json/');
       dispatch({ type: CANCEL_CHECKOUT, payload: id })
 
     } catch (err) {

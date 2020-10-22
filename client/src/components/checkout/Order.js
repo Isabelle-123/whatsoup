@@ -7,18 +7,17 @@ const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
     const { checkout, cancelCheckout } = checkoutContext
 
-
-
-    const listItems = () => {
-        if (checkout.length > 0) {
-            const allItems = checkout.map(item => (
-                <div key={item.id}>
-                    {item.name}
-                </div>
-            ))
-            return allItems
+    const listItems =  () => {
+      if (checkout.length > 0) {
+        const allItems = checkout.map(item => (
+            <div key={item.id}>
+                {item.name}
+            </div>
+        ))
+        return allItems
+                
         } else {
-            return ''
+        return ''
         }
     }
 
