@@ -1,5 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
-//import { v4 as uuidv4 } from 'uuid'
+import React, { useReducer } from 'react'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
 import axios from 'axios'
@@ -63,45 +62,32 @@ const CheckoutState = (props) => {
           //     payload: err.response.msg,
         }
       }
-    // const addFood = (type, name, price) => {
-    //     // let order = { type, name, price }
-    //     fetch('https://ey-whatsoup.firebaseio.com/order.json', {
-    //         method: 'POST',
-    //         // body: JSON.stringify(order),
-    //         headers: { 'Content-Type': 'application/json' }
-    //     }).then(response => {
-    //         return response.json()
-    //     })
 
-    //     dispatch({ type: ADD_FOOD, payload: { type, name, price } })
-    //     console.log(state.checkout)
-
-    // }
-
- 
-    const getCheckout = async () => {
-        try {
-          let res = await axios.get('https://ey-whatsoup.firebaseio.com/order.json?print=pretty')
-        //   let x = JSON.stringify(res.data)
-    
-          console.log('geeeeeeet res' + JSON.stringify(res.data));
-          console.log('normal' + res);
-    
-          dispatch({
-            type: GET_CHECKOUT,
-            payload: res.data,
-          })
-        } catch (err) {
+  const getCheckout = async () => {
+    try {
+      let res = await axios.get('https://ey-whatsoup.firebaseio.com/order.json')
+        
+      const orders = [];
+        for (let key in res.data) {
+          orders.push( {
+          ...res.data[key],
+          id: key
+        });
+      }
+  
+      
+      dispatch({
+        type: GET_CHECKOUT,
+        payload: orders,
+        })
+      } catch (err) {
           // dispatch({
           //   type: CONTACT_ERROR,
           //   payload: err.response.msg
           // });
-          console.log('error - could not get checkout')
-        }
-      }
-    
-
-        console.log(state.checkout)
+      console.log('error - could not get checkout')
+    }
+  }
     
 
 

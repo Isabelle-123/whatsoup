@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import AlertContext from '../../context/alert/alertContext'
-import Alert from '../alert/Alert'
+//import Alert from '../alert/Alert'
 //import { createGlobalStyle } from 'styled-components'
 
 

@@ -49,7 +49,6 @@ const Order = () => {
     }
 
 
-
     return (
         <StyledOrder>
             <div className='container'>

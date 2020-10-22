@@ -16,7 +16,7 @@ export default (state, action) => {
         case GET_CHECKOUT:
             return {
                 ...state,
-                checkout: [action.payload],
+                checkout: action.payload,
             }
         case UPDATE_CHECKOUT:
             return {
