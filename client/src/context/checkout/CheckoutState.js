@@ -20,37 +20,26 @@ const initialState = { checkout: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
   //Add item till checkout
-    const addFood = async (type, name, price ) => {
+  const addFood = async (type, name, price ) => {
         // const id = uuidv4();
-        let order = { type, name, price }
-        const config = {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        body: JSON.stringify(order),
-        }
+    let order = { type, name, price }
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
     
-        try {
-          const res = await axios.post(
-            'https://ey-whatsoup.firebaseio.com/order.json',
-            // order,
-           order,
-            config
-          )
-          console.log('order' + order, config);
-          console.log('res' + res.data);
-    
-          dispatch({
-            type: ADD_FOOD,
-            payload: (res.data)
-          })
-        } catch (err) {
-          console.log('error')
+    try {
+      const res = await axios.post('https://ey-whatsoup.firebaseio.com/order.json', order, config )
+      dispatch({ type: ADD_FOOD, payload: (res.data) })
+
+    } catch (err) {
+        console.log('error')
           //   dispatch({
           //     type: CONTACT_ERROR,
           //     payload: err.response.msg,
-        }
-      }
+    }
+  }
 
   // Get checkout
   const getCheckout = async () => {
@@ -65,10 +54,8 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
         });
       }
   
-      dispatch({
-        type: GET_CHECKOUT,
-        payload: orders,
-        })
+      dispatch({ type: GET_CHECKOUT, payload: orders })
+      
     } catch (err) {
           // dispatch({
           //   type: CONTACT_ERROR,
