@@ -1,5 +1,6 @@
 import React, {useEffect, useContext} from 'react'
 import Order from './Order'
+import GoodChoice from './GoodChoice'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 
 const Checkout = () => {
@@ -13,6 +14,7 @@ const Checkout = () => {
   
     return (
         <>
+            <GoodChoice />
             <Order />
         </>
     )
