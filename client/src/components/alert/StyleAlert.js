@@ -63,7 +63,6 @@ export const StyleAlert = styled.div`
     margin: 0px 15px 0px 15px;
     padding: 5px;
     font-weight: 200;
-    font-size: 18px;
     text-align: center;
     font-size: 15px;
  }

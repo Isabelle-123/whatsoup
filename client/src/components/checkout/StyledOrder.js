@@ -6,43 +6,54 @@ background-color: #dfd;
 .container {
     height: 100vh;
     background: #dfd;
-    font-size: 12px;
-    font-weight: lighter;
+    font-size: 15px;
+    font-weight: 200;
     padding-top: 10px; 
     padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin: 0;
 }
 
-.container > h5 {
+.your-order{
     margin: 0;
-    padding-right: 10px;
-   padding-left: 10px;
+    margin-top: 20px;
+}
+
+.your-order, .total-price {
+   font-size: 15px;
+   font-weight: 400;
+}   
+
+
+.listItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.container-total {
+   display: flex;
+   justify-content: space-between;
+}
+.total-price {
+    margin-top: 15px;
+}
+
+.finalPrice {
+    font-family: Lobster;
+    font-size: 30px;
+    font-weight: 100;
+    margin-top: 0;
+    margin: 0;
 }
 
 .cancelOk {
    display: flex;
    justify-content: space-between;
    margin: 0;
-   padding-right: 5px;
-   padding-left: 5px;
-
+   margin-top: 20px;
 }
 
-.totalPrice, .listItems {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
-    padding-right: 15px;
-   padding-left: 15px;
-}
-
-
-.finalPrice {
-    font-family: Lobster;
-    font-size: 25px;
-    font-weight: 100;
-    margin-top: 0;
-    margin: 0;
-}
 `

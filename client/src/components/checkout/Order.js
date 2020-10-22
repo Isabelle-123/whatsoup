@@ -51,15 +51,15 @@ const Order = () => {
     return (
         <StyledOrder>
             <div className='container'>
-                <h5>YOUR ORDER</h5>
+                <h1 className='your-order'>YOUR ORDER</h1>
 
                 <section className='listItems'>
-                    <h5>{listItems()}</h5>
-                    <h5>{listPrice()}</h5>
+                    <p>{listItems()}</p>
+                    <p>{listPrice()}</p>
                 </section>
 
-                <section className='totalPrice'>
-                    <h5>TOTAL PRICE</h5>
+                <section className='container-total'>
+                    <h2 className='total-price'>TOTAL PRICE</h2>
                     <h5 className='finalPrice'>{total()} sek</h5>
                 </section>
 
