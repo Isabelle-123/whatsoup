@@ -55,7 +55,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
       }
   
       dispatch({ type: GET_CHECKOUT, payload: orders })
-      
+
     } catch (err) {
           // dispatch({
           //   type: CONTACT_ERROR,
@@ -69,7 +69,6 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
   const cancelCheckout = async id => {
     try {
       await axios.delete(`https://ey-whatsoup.firebaseio.com/order.json/`);
-
       dispatch({ type: CANCEL_CHECKOUT, payload: id })
 
     } catch (err) {
@@ -82,6 +81,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
   }
 
 console.log(state.checkout);
+
     return (
         <CheckoutContext.Provider
             value={{
