@@ -18,11 +18,11 @@
 }
 
 .foodInfoContainer {
-  width: 85%;
+  width: 75%;
   background: rgba(204, 204, 204, 0.6);
   position: absolute;
   right: 0px;
-  z-index: 100;
+  z-index: 1;
   color: black;
   padding: 5px;
   margin-top: -150px;
