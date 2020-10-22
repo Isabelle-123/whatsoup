@@ -14,8 +14,8 @@ import Alert from '../alert/Alert'
 const Bread = () => {
 
     const database = [
-        { type: "Bread", key: 10, name: "The Cheesy One", desc: "", price: 15, img: cheese, nextItem: "spreads", alt: "Soup with taste of healing", next: "protein" },
-        { type: "Bread", key: 11, name: "Hold BAck Vampire", desc: "", price: 15, img: vampire, nextItem: "spreads", next: "protein" },
+        // { type: "Bread", key: 10, name: "The Cheesy One", desc: "", price: 15, img: cheese, nextItem: "spreads", alt: "Soup with taste of healing", next: "protein" },
+        { type: "Bread", key: 11, name: "Hold Back Vampire", desc: "", price: 15, img: vampire, nextItem: "spreads", next: "protein" },
         { type: "Bread", key: 12, name: "Going Nuts", desc: "", price: 15, img: nuts, nextItem: "spreads", next: "protein" },
         { type: "Bread", key: 13, name: "As Good As It Baguettes", desc: "", price: 15, img: baguette, nextItem: "spreads", next: "protein" },
 

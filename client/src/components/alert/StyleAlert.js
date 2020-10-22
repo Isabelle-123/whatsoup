@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyleAlert = styled.div`
 
-display:flex; 
+    display:flex; 
     justify-content: center;
   
  .blurMe > *:not(#alert-container) {
@@ -17,16 +17,14 @@ display:flex;
     padding: 2%;
     width: 300px;
     text-align: center; */}
-    width: 80%;
-    margin: 0px;
-    padding: 0px;
-    background: yellow;
-    z-index: 10000;
+    width: 90%;
     margin-top: 10px;
-    margin-bottom: 10px;
-    ${'' /* height: 100vh; */}
-    border-radius: 10px;
 
+    ${'' /* z-index: 10000;
+    margin-bottom: -500px; */}
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
   }
   
 
@@ -62,7 +60,7 @@ display:flex;
  }
 
  .text {
-    margin: 0px;
+    margin: 0px 15px 0px 15px;
     padding: 5px;
     font-weight: 200;
     font-size: 18px;

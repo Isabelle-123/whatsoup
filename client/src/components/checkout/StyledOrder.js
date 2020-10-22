@@ -4,7 +4,6 @@ export const StyledOrder = styled.div`
 background-color: #dfd;
 
 .container {
-    border: 1px solid red;
     height: 100vh;
     background: #dfd;
     font-size: 12px;
@@ -34,8 +33,8 @@ background-color: #dfd;
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
-    padding-right: 10px;
-   padding-left: 10px;
+    padding-right: 15px;
+   padding-left: 15px;
 }
 
 

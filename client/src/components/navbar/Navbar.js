@@ -38,7 +38,7 @@ background: #ffb
 
  .name {
     font-family: 'Lobster', cursive;
-    font-size: 40px;
+    font-size: 37px;
  }
 
  .price {
