@@ -14,10 +14,10 @@ import Alert from '../alert/Alert'
 const Spreads = () => {
 
     const database = [
-        { type: "Bread", key: 14, name: "Whipped Butter", desc: "75 gram", price: 15, img: butter, nextItem: "PROTEIN", alt: "Soup with taste of healing", next: "protein" },
-        { type: "Bread", key: 15, name: "Beetroot Hummus", desc: "100 gram", price: 15, img: beet, nextItem: "PROTEIN", next: "protein" },
-        { type: "Bread", key: 16, name: "Tryffle Aioli", desc: "75 gram", price: 15, img: aioli, nextItem: "PROTEIN", next: "protein" },
-        { type: "Bread", key: 17, name: "Sliced Avocado", desc: "75 gram", price: 15, img: avocado, nextItem: "PROTEIN", next: "protein" },
+        { type: "Spreads", key: 14, name: "Whipped Butter", desc: "75 gram", price: 15, img: butter, nextItem: "treats", next: "protein" },
+        { type: "Spreads", key: 15, name: "Beetroot Hummus", desc: "100 gram", price: 15, img: beet, nextItem: "treats", next: "protein" },
+        { type: "Spreads", key: 16, name: "Tryffle Aioli", desc: "75 gram", price: 15, img: aioli, nextItem: "treats", next: "protein" },
+        { type: "Spreads", key: 17, name: "Sliced Avocado", desc: "75 gram", price: 15, img: avocado, nextItem: "treats", next: "protein" },
 
     ]
 
@@ -27,7 +27,7 @@ const Spreads = () => {
             <Navbar typeOfFood='Spreads' price='15' next='/treats' />
             {
                 database.map(item => (
-                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
+                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.name} nextItem={item.nextItem} />
                 ))}
         </div>
     )

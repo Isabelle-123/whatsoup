@@ -14,8 +14,8 @@ const Treats = () => {
 
     const database = [
 
-        { type: "Treats", key: 18, name: "American Pancakes", desc: "With lemon and blueberrys", price: 15, img: amicake, nextItem: "BEVERAGES", next: "beverages" },
-        { type: "Treats", key: 19, name: "Pancakes", desc: "with cream and jam", price: 15, img: pancake, nextItem: "BEVERAGES", next: "beverages" },
+        { type: "Treats", key: 18, name: "American Pancakes", desc: "With lemon and blueberrys", price: 15, img: amicake, nextItem: "beverages", next: "beverages" },
+        { type: "Treats", key: 19, name: "Pancakes", desc: "with cream and jam", price: 15, img: pancake, nextItem: "beverages", next: "beverages" },
 
     ]
 
@@ -25,7 +25,7 @@ const Treats = () => {
             <Navbar typeOfFood='Treats' price='15' next='/beverages' />
             {
                 database.map(item => (
-                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
+                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.name} nextItem={item.nextItem} />
                 ))}
         </div>
     )

@@ -32,12 +32,12 @@ const Soup = () => {
 
     return (
         <div>
-            <Alert type={db.type} name={db.name} price={db.price}/>
+            <Alert />
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
 
             {
                 db.map(item => (
-                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
+                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
                 ))}
         </div>
     )

@@ -15,11 +15,11 @@ import Alert from '../alert/Alert'
 const Beverages = () => {
 
     const database = [
-        { type: "Beverages", key: 20, name: "Lemonade", desc: "Lime and Lemon", price: 15, img: lime, nextItem: "Ccheckout", alt: "Soup with taste of healing", next: "checkout" },
-        { type: "Beverages", key: 21, name: "Juice", desc: "Apple and Ginger", price: 15, img: apple, nextItem: "Ccheckout", next: "checkout" },
-        { type: "Beverages", key: 22, name: "Three Shots", desc: "", price: 15, img: shots, nextItem: "Ccheckout", next: "checkout" },
-        { type: "Beverages", key: 23, name: "Fritz-Kola", desc: "", price: 15, img: fritz, nextItem: "Ccheckout", next: "checkout" },
-        { type: "Beverages", key: 24, name: "Kombucha", desc: "", price: 15, img: kombucha, nextItem: "Ccheckout", next: "checkout" },
+        { type: "Beverages", key: 20, name: "Lemonade", desc: "Lime and Lemon", price: 15, img: lime, nextItem: "checkout", alt: "Soup with taste of healing", next: "checkout" },
+        { type: "Beverages", key: 21, name: "Juice", desc: "Apple and Ginger", price: 15, img: apple, nextItem: "checkout", next: "checkout" },
+        { type: "Beverages", key: 22, name: "Three Shots", desc: "", price: 15, img: shots, nextItem: "checkout", next: "checkout" },
+        { type: "Beverages", key: 23, name: "Fritz-Kola", desc: "", price: 15, img: fritz, nextItem: "checkout", next: "checkout" },
+        { type: "Beverages", key: 24, name: "Kombucha", desc: "", price: 15, img: kombucha, nextItem: "checkout", next: "checkout" },
 
     ]
 
@@ -29,7 +29,7 @@ const Beverages = () => {
             <Navbar typeOfFood='Beverages' price='15' next='/checkout' />
             {
                 database.map(item => (
-                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
+                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={item.name} nextItem={item.nextItem} />
                 ))}
         </div>
     )

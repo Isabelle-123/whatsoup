@@ -100,7 +100,7 @@ const Alert = (props) => {
   const alertContext = useContext(AlertContext)
   const { alert, removeAlert } = alertContext
 
-  const { name, type, price } = props
+  const { name, type, price, } = props
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -121,7 +121,7 @@ const Alert = (props) => {
             <AddButton type={type} name={name} price={price} />
           </section>
           <section className='nextContainer'>
-            <LinkButton to={'/' + alert.next}>NEXT</LinkButton>
+            <LinkButton to={'/' + alert.nextItem}>NEXT</LinkButton>
           </section>
         </div>
       </StyleAlert>

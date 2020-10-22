@@ -13,7 +13,7 @@ const ShowFood = (props) => {
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
 
-    const { name, type, price, desc, img, alt, nextItem } = props
+    const { name, type, price, desc, img, alt, nextItem, next } = props
 
     const handleSubmit = (e) => {
         e.preventDefault()
