@@ -2,7 +2,9 @@ import React, { useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import AlertContext from '../../context/alert/alertContext'
-import Alert from '../alert/Alert'
+//import Alert from '../alert/Alert'
+// import '.index.css'
+
 //import { createGlobalStyle } from 'styled-components'
 
 
@@ -13,13 +15,16 @@ const ShowFood = (props) => {
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
 
-    const { name, type, price, desc, img, alt, nextItem, next } = props
+    const { name, type, price, desc, img, alt, nextItem } = props
 
     const handleSubmit = (e) => {
         e.preventDefault()
         // let food = { type, name, price }
         setAlert(name, nextItem, type)
         addFood(type, name, price);
+        document.getElementById('root').classList.add('blurMe');
+        //document.root.classList.add('blurMe');
+        //document.getElementById('root').style.filter = 'grayscale(100%) blur(1px) '
 
     }
 

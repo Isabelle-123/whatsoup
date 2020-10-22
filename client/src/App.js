@@ -9,11 +9,11 @@ import Beverages from './components/menu/Beverages'
 import Login from './components/pages/login'
 
 import AlertState from './context/alert/AlertState'
-//import Alert from './components/alert/Alert'
 import Checkout from './components/checkout/Checkout'
-//import CheckoutPage from './components/pages/CheckoutPage'
 import Home from './components/pages/Home'
 import CheckoutState from './context/checkout/CheckoutState'
+
+import menuStyle from './components/menu/menuStyle.module.css'
 
 function App() {
   // const [user, setUser] = useState({ loggedIn: false });
@@ -21,7 +21,7 @@ function App() {
   //   return <span>User is logged out</span>;
   // }
 
-  return (
+  return ( 
     <AlertState>
       <CheckoutState>
         <Router>

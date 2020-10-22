@@ -26,12 +26,9 @@ const Soup = () => {
         { type: "Soup", key: 5, name: "Low Carb", desc: "Sweet potato, ginger, cummin marsala, garlic, coconut milk", price: 50, img: lowcarb, nextItem: "PROTEIN", next: "protein" }
     ]
 
-//    const name = db[1].name;
-//    const name = db[1].name;
-//    const name = db[1].name;
 
     return (
-        <div>
+        <div >
             <Alert />
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
 
