@@ -1,9 +1,9 @@
 const express = require('express')
 const path = require('path')
 const app = express();
+var cors = require('cors')
 
-
-
+app.use(cors())
 app.get('/', (req, res) => res.send({ msg: 'Welcome to Whatsoup' }));
 
 app.get('*', (req, res) => {

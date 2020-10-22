@@ -16,21 +16,10 @@ import {
 
 
 const CheckoutState = (props) => {
+const initialState = { checkout: [] }
+const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
-    const initialState = { checkout: [] }
-
-    const [state, dispatch] = useReducer(checkoutReducer, initialState,
-      
-    )
-
-
-    //Delete checkout
-    const cancelCheckout = () => {
-        dispatch({ type: CANCEL_CHECKOUT })
-    }
-
-
-    //Add item till checkout
+  //Add item till checkout
     const addFood = async (type, name, price ) => {
         // const id = uuidv4();
         let order = { type, name, price }
@@ -63,6 +52,7 @@ const CheckoutState = (props) => {
         }
       }
 
+  // Get checkout
   const getCheckout = async () => {
     try {
       let res = await axios.get('https://ey-whatsoup.firebaseio.com/order.json')
@@ -75,12 +65,11 @@ const CheckoutState = (props) => {
         });
       }
   
-      
       dispatch({
         type: GET_CHECKOUT,
         payload: orders,
         })
-      } catch (err) {
+    } catch (err) {
           // dispatch({
           //   type: CONTACT_ERROR,
           //   payload: err.response.msg
@@ -89,8 +78,23 @@ const CheckoutState = (props) => {
     }
   }
     
+  // Delete checkout
+  const cancelCheckout = async id => {
+    try {
+      await axios.delete(`https://ey-whatsoup.firebaseio.com/order.json/`);
 
+      dispatch({ type: CANCEL_CHECKOUT, payload: id })
 
+    } catch (err) {
+      console.log(err);
+      // dispatch({
+      //   type: CHECKOUT_CANCEL_ERROR, 
+      //   payload: err.response.msg
+      // });
+    }
+  }
+
+console.log(state.checkout);
     return (
         <CheckoutContext.Provider
             value={{

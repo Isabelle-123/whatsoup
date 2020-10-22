@@ -24,9 +24,15 @@ export default (state, action) => {
                 checkout: [...state.checkout, action.payload],
             }
         case CANCEL_CHECKOUT:
+            // return {
+            //     checkout: []
+            // }
             return {
-                checkout: []
-            }
+                ...state,
+                checkout: state.checkout.filter(
+                  order => order.id !== action.payload
+                )
+              };
 
         default:
             return state
