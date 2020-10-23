@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import LinkButtonWide from '../buttons/LinkButton'
+import LinkButtonWide from '../buttons/LinkButtonWide'
 
 
 const StyleGoodChoice = styled.div`
@@ -20,11 +20,15 @@ const StyleGoodChoice = styled.div`
     font-weight: 100;
     font-size: 50px;
     margin: 0;
+    padding-bottom: 20px;
+
 }
 
 .container-choice {
     background: #ffb;
     margin: 0;
+    padding-top: 20px;
+
 
 
 }
@@ -47,21 +51,21 @@ const StyleGoodChoice = styled.div`
 
 ul {
     list-style: none;
-    width: 90%;
     ${'' /* display:flex; 
     flex-direction: column; */}
 
     display:flex; 
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0px 0px 20px 0px;
 
 }
 
 
 
-
- 
 `
 
 const GoodChoice = () => {

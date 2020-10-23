@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyledOrder } from './StyledOrder'
-import LinkButton from '../buttons/LinkButton'
+import LinkButtonWide from '../buttons/LinkButtonWide'
 
 const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
@@ -54,8 +54,8 @@ const Order = () => {
                 <h1 className='your-order'>YOUR ORDER</h1>
 
                 <section className='listItems'>
-                    <p>{listItems()}</p>
-                    <p>{listPrice()}</p>
+                    <div>{listItems()}</div>
+                    <div>{listPrice()}</div>
                 </section>
 
                 <section className='container-total'>
@@ -64,8 +64,8 @@ const Order = () => {
                 </section>
 
                 <section className='cancelOk'>
-                    <LinkButton to='/soup' onClick={Cancel}>CANCEL</LinkButton>
-                    <LinkButton>OK</LinkButton>
+                    <LinkButtonWide to='/soup' onClick={Cancel}>CANCEL</LinkButtonWide>
+                    <LinkButtonWide>OK</LinkButtonWide>
                 </section>
 
             </div>

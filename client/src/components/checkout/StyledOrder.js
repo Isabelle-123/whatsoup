@@ -30,7 +30,8 @@ background-color: #dfd;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .container-total {

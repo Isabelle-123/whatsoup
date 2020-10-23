@@ -17,7 +17,7 @@ const LinkButtonWide = (props) => {
     } = props
     return (
         <button
-            className={buttonsStyle.buttonWithBorderWide}
+            className={buttonsStyle.LinkButtonWide}
             {...rest} // `children` is just another prop!
             onClick={(event) => {
                 onClick && onClick(event)
