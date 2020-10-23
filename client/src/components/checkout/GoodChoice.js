@@ -12,34 +12,26 @@ const StyleGoodChoice = styled.div`
     text-align: center;
 }
 
-
 .checkout {
     background: #dfd;
     border-bottom: 1px solid black;
-   
     font-weight: 100;
-    font-size: 50px;
+    font-size: 30px;
     margin: 0;
-    padding-bottom: 20px;
-
+    padding: 15px 0px 15px 0px;
 }
 
 .container-choice {
     background: #ffb;
     margin: 0;
-    padding-top: 20px;
-
-
-
+    padding-top: 15px;
 }
 
 .choice {
     font-size: 40px;
-
     font-weight: 100;
     margin: 0;
     align-text: center;
-
 }
 
 .text {
