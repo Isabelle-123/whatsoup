@@ -1,23 +1,33 @@
 .buttonWithBorder {
-    border-radius: 5px;
-    background-color: transparent;
-    cursor: pointer;
-    border: 1px solid black;
-    text-decoration: 'none';
-    margin:5px;
- 
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid black;
+  text-decoration: 'none';
+  margin: 5px;
+}
+
+.buttonWithBorderWide {
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid black;
+  text-decoration: 'none';
+  margin: 5px;
+  width: 100px;
+  color: red;
 }
 
 .closeX {
-    border-radius: 5px;
-    background-color: transparent;
-    cursor: pointer;
-    text-decoration: 'none';
-    border: none;
-    float: right;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: 'none';
+  border: none;
+  float: right;
 }
 
-.linkButton {
+/* .linkButton {
     border-radius: 5px;
     background-color: transparent;
     cursor: pointer;
@@ -25,7 +35,7 @@
     text-decoration: 'none';
     margin:5px;
     width: 300px;
-}
+} */
 /* 
     .backCheckout :focus, :hover, :visited, :link, :active{
         text-decoration: 'none';

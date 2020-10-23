@@ -13,8 +13,6 @@ import Checkout from './components/checkout/Checkout'
 import Home from './components/pages/Home'
 import CheckoutState from './context/checkout/CheckoutState'
 
-import menuStyle from './components/menu/menuStyle.module.css'
-
 function App() {
   // const [user, setUser] = useState({ loggedIn: false });
   // if (!user.loggedIn) {
