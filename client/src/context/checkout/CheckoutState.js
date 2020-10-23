@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
 //import firebaseConfig from '../../firebase/firebaseIndex'
@@ -20,6 +20,14 @@ import {
 const CheckoutState = (props) => {
 const initialState = { checkout: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
+
+
+        // firebaseConfig.databaseURL,
+
+  useEffect(() => {
+    getCheckout()
+    // eslint-disable-next-line
+  }, [])      
 
   //Add item till checkout
   const addFood = async (type, name, price ) => {
@@ -68,6 +76,8 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
           // });
       console.log('error - could not get checkout')
     }
+    console.log('sssst' + state.checkout[0]);
+
   }
     
   // Delete checkout
@@ -85,7 +95,6 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
     }
   }
 
-console.log(state.checkout);
 
     return (
         <CheckoutContext.Provider

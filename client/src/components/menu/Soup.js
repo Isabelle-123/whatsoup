@@ -1,5 +1,5 @@
 import React, {useContext}from 'react'
-import ShowFood from './ShowFood'
+import ListFood from './ListFood'
 import healing from '../../assets/Soups/healing.png'
 import chillie from '../../assets/Soups/chillibillie.png'
 import solong from '../../assets/Soups/solongcold.png'
@@ -34,7 +34,7 @@ const Soup = () => {
 
             {
                 db.map(item => (
-                    <ShowFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
+                    <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
                 ))}
         </div>
     )

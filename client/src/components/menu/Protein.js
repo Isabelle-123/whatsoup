@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar'
-import ShowFood from './ShowFood'
+import ListFood from './ListFood'
 import fried from '../../assets/Protein/friedtofu.png'
 import chicken from '../../assets/Protein/grilledchicken.png'
 import shrimp from '../../assets/Protein/shrimps.png'
@@ -24,7 +24,7 @@ const Protein = () => {
             <Navbar typeOfFood='Protein' price='30' next='/bread' />
             {
                 database.map(item => (
-                    <ShowFood type={item.type} name={item.name} price={item.price} id={item.id} key={item.id} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
+                    <ListFood type={item.type} name={item.name} price={item.price} id={item.id} key={item.id} desc={item.desc} img={item.img} alt={item.alt} nextItem={item.nextItem} />
                 ))}
         </div>
     )
