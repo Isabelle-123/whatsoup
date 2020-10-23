@@ -1,8 +1,10 @@
 import React, { useReducer } from 'react'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
+//import firebaseConfig from '../../firebase/firebaseIndex'
 import axios from 'axios'
 
+// firebaseConfig.databaseURL
 
 import {
     ADD_FOOD,
@@ -30,7 +32,10 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
     }
     
     try {
-      const res = await axios.post('https://whatsoup-7c207.firebaseio.com/order.json/', order, config )
+      const res = await axios.post(
+        // firebaseConfig.databaseURL,
+      'https://whatsoup-7c207.firebaseio.com/order.json/', 
+      order, config )
       dispatch({ type: ADD_FOOD, payload: (res.data) })
 
     } catch (err) {
