@@ -10,13 +10,7 @@ import Alert from '../alert/Alert'
 //import AlertContext from '../../context/alert/alertContext'
 //import { v4 as uuidv4 } from 'uuid';
 
-
-
-
 const Soup = () => {
-    // const alertContext = useContext(AlertContext)
-    // const { setAlert } = alertContext
-
 
     const db = [
         { type: "Soup", key: 1, name: "The Healing", desc: "Butternut squash, red onions, garlic, coconut milk", price: 50, img: healing, nextItem: "PROTEIN", alt: "Soup with taste of healing", next: "protein" },
@@ -28,8 +22,10 @@ const Soup = () => {
 
 
     return (
-        <div >
-            <Alert />
+        <div>
+       
+                <Alert />
+            
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
 
             {

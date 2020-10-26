@@ -10,22 +10,21 @@ import AlertContext from '../../context/alert/alertContext'
 
 const ListFood = (props) => {
     const checkoutContext = useContext(CheckoutContext)
-    const { addFood, checkout } = checkoutContext
+    const { addFood } = checkoutContext
 
     const alertContext = useContext(AlertContext)
     const { setAlert } = alertContext
 
     const { name, type, price, desc, img, alt, nextItem } = props
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        // let food = { type, name, price }
-        setAlert(name, nextItem, type)
+        setAlert(name, nextItem, type);
         addFood(type, name, price);
         document.getElementById('root').classList.add('blurMe');
         //document.root.classList.add('blurMe');
         //document.getElementById('root').style.filter = 'grayscale(100%) blur(1px) '
-        console.log(checkout);
     }
 
 
