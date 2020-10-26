@@ -1,6 +1,6 @@
 import React from 'react'
 import ListFood from './ListFood'
-import cheese from '../../assets/Bread/cheesy.png'
+//import cheese from '../../assets/Bread/cheesy.png'
 import vampire from '../../assets/Bread/vampire.png'
 import nuts from '../../assets/Bread/goingnuts.png'
 import baguette from '../../assets/Bread/asgoodasitbaguettes.png'

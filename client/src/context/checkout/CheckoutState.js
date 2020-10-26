@@ -58,7 +58,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
   const getCheckout = async () => {
     try {
       let res = await axios.get('https://whatsoup-7c207.firebaseio.com/order.json/')
-        
+     
       const orders = [];
         for (let key in res.data) {
           orders.push( {
@@ -66,9 +66,8 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
           id: key
         });
       }
-  
       dispatch({ type: GET_CHECKOUT, payload: orders })
-
+      
     } catch (err) {
           // dispatch({
           //   type: CONTACT_ERROR,
@@ -76,7 +75,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
           // });
       console.log('error - could not get checkout')
     }
-    console.log('sssst' + state.checkout[0]);
+
 
   }
     

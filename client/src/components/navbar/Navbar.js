@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Backbutton from '../buttons/Backbutton'
 import LinkButton from '../buttons/LinkButton'
 //import styles from './navbarStyle.module.css'
 import styled from 'styled-components'
+import AlertContext from '../../context/alert/alertContext'
 
 const Test = styled.div`
 @media (max-width: 768px){
@@ -68,20 +69,27 @@ background: #ffb
 }
 }`
 const Navbar = (props) => {
+  const alertContext = useContext(AlertContext)
+  const { removeAlert } = alertContext
+
+  const closeAlert = (e) => {
+    e.preventDefault()
+    removeAlert()
+  }
 
   return (
     <Test>
       <div className={`.Navbar typeOfFood-${props.typeOfFood}`}>
         <div className="Upperbutt">
           <Backbutton />
-          <LinkButton to='/checkout'>CHECKOUT</LinkButton>
+          <LinkButton to='/checkout' onClick={closeAlert}>CHECKOUT</LinkButton>
         </div>
         <div className="namePrice">
           <div className="name">{props.typeOfFood}</div>
           <div className="price">/ {props.price} SEK</div>
         </div>
         <div className="Nextstyle">
-          <LinkButton to={props.next}>NEXT</LinkButton>
+          <LinkButton to={props.next} onClick={closeAlert}>NEXT</LinkButton>
         </div>
       </div>
     </Test>
