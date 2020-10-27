@@ -7,31 +7,32 @@ import axios from 'axios'
 // firebaseConfig.databaseURL
 
 import {
-    ADD_FOOD,
-    CANCEL_CHECKOUT,
-    // UPDATE_CHECKOUT,
-    GET_CHECKOUT,
-    // GET_ORDER,
-    // DELETE_FOOD,
+  ADD_TO_FRIEND,
+  ADD_FOOD,
+  CANCEL_CHECKOUT,
+  UPDATE_CHECKOUT,
+  GET_CHECKOUT,
+  GET_FRIEND,
+  REMOVE_FRIEND_ITEM
+  // DELETE_FOOD,
 
 } from '../types'
 
 
 const CheckoutState = (props) => {
-const initialState = { checkout: [] }
+const initialState = { checkout: [], friend: null }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
 
+useEffect(() => {
+  getCheckout()
+  // eslint-disable-next-line
+}, [])      
         // firebaseConfig.databaseURL,
 
-  useEffect(() => {
-    getCheckout()
-    // eslint-disable-next-line
-  }, [])      
 
   //Add item till checkout
   const addFood = async (type, name, price ) => {
-        // const id = uuidv4();
     let order = { type, name, price }
     const config = {
       headers: {
@@ -93,20 +94,46 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
       // });
     }
   }
+  const addToFriend = async (type, price) => {
+    let friend = { type, price }
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }
+    try {
+      const res = await axios.post(
+        'https://ey-whatsoup.firebaseio.com/friend.json',
+        friend,
+        config
+      )
+      dispatch({
+        type: ADD_TO_FRIEND,
+        payload: res.data
+      })
 
+    } catch (err) {
+        console.error('error - could not add food item to friend')
+        //   dispatch({
+        //     type: CONTACT_ERROR,
+        //     payload: err.response.msg,
+    }
+  }
 
-    return (
-        <CheckoutContext.Provider
-            value={{
-                checkout: state.checkout,
-                addFood,
-                cancelCheckout,
-                getCheckout
-            }}
-        >
-            {props.children}
-        </CheckoutContext.Provider>
-    )
+  return (
+    <CheckoutContext.Provider
+      value={{
+        checkout: state.checkout,
+        friend: state.friend,
+        addFood,
+        cancelCheckout,
+        getCheckout,
+        addToFriend
+      }}
+    >
+    {props.children}
+    </CheckoutContext.Provider>
+  )
 }
 
 export default CheckoutState
