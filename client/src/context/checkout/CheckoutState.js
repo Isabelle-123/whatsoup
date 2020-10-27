@@ -20,7 +20,7 @@ import {
 
 
 const CheckoutState = (props) => {
-const initialState = { checkout: [], friend: null }
+const initialState = { checkout: [], friend: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
 
@@ -120,6 +120,29 @@ useEffect(() => {
     }
   }
 
+  const getFriend = async () => {
+    try {
+      let res = await axios.get('https://ey-whatsoup.firebaseio.com/friend.json')
+
+      const friendCheckout = [];
+      for (let key in res.data) {
+        friendCheckout.push({
+          ...res.data[key],
+          id: key
+        });
+      }
+
+      dispatch({ type: GET_FRIEND, payload: friendCheckout })
+
+    } catch (err) {
+        // dispatch({
+        //   type: CONTACT_ERROR,
+        //   payload: err.response.msg
+        // });
+        console.log('error - could not get friend checkout')
+    }
+}
+
   return (
     <CheckoutContext.Provider
       value={{
@@ -128,7 +151,8 @@ useEffect(() => {
         addFood,
         cancelCheckout,
         getCheckout,
-        addToFriend
+        addToFriend,
+        getFriend,
       }}
     >
     {props.children}

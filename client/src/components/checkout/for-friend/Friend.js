@@ -16,19 +16,41 @@ const Friend = () => {
     ]
 
 
+    useEffect(() => {
+        addToFriend()
+        getFriend()
+        // eslint-disable-next-line
+    }, [])
+
+    // const handleRemove = (product) => {
+
+    // }
+
+
+
+    const total = () => {
+        if (friend.length > 0) {
+            const totalPrice = friend.reduce((acc, curr) => acc + curr.price, 0)
+            return totalPrice
+
+        } else {
+            return ''
+
+        }
+    }
+
+
     const handleAdd = (product) => {
-
         addToFriend(product.type, product.price)
-
         window.location.reload()
     }
 
     return (
         <div className="wrapper">
             <div>
-                {/* Shopping Cart: {friend.length} */}
+                Shopping Cart: {friend.length}
             </div>
-            {/* <div>Total: {total()}</div> */}
+            <div>Total: {total()}</div>
             <div>
                 {products.map(product => (
                     <div key={product.id}>

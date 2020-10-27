@@ -23,11 +23,8 @@ const Soup = () => {
 
     return (
         <div>
-       
-                <Alert />
-            
+            <Alert />
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
-
             {
                 db.map(item => (
                     <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
