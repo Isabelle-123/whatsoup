@@ -14,7 +14,6 @@ const StyleGoodChoice = styled.div`
 
 .checkout {
     background: #dfd;
-    border-bottom: 1px solid black;
     font-weight: 100;
     font-size: 30px;
     margin: 0;
@@ -25,6 +24,8 @@ const StyleGoodChoice = styled.div`
     background: #ffb;
     margin: 0;
     padding-top: 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .choice {
@@ -45,7 +46,6 @@ ul {
     list-style: none;
     ${'' /* display:flex; 
     flex-direction: column; */}
-
     display:flex; 
     justify-content: center;
     flex-wrap: wrap;
@@ -53,7 +53,30 @@ ul {
     margin-left: 20px;
     margin-right: 20px;
     padding: 0px 0px 20px 0px;
+}
 
+@media (min-width: 560px){
+ 
+    .checkout {
+        background: #dfd;
+        background: red;
+    }
+
+    ul {
+        margin: 3% 25% 3% 25%;
+    }
+}
+
+@media (min-width: 1040px){
+ 
+ .checkout {
+     background: #dfd;
+     background: green;
+ }
+
+ ul {
+     margin: 2% 10% 2% 10%;
+ }
 }
 
 `

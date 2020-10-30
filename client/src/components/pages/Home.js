@@ -1,37 +1,38 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components'
+import Logo from '../../assets/logo.png'
+import LinkButtonBig from '../buttons/LinkButtonBig'
 
-const Style = styled.div`
-    background-color: #dfd;
-
-
-h1 {
-    font-family: 'Lobster', cursive;
+const Eey = styled.div`
     
+    .container {
+    font-family: 'Lobster', cursive;
+    display: flex;
+    flex-direction: column;
+    ${'' /* flex-wrap: wrap; */}
+    position: absolute;
+    background-color: #dfd;
     height:100%;
-    width: 100%;
     font-size: 10em;
-}
+    }
+   
 
-h2 {
-    height: 35%;
+`
+const Whaddap = styled.img`
     width: 100%;
-}
 
 `
 
-
-
-
 const Home = () => {
-    return (
-        <Style>
-            <div>
-                <h1> Eey! </h1>
-                <h2> Whats'oup? </h2>
-            </div>
-        </Style>
-    )
-}
 
-export default Home
+    return (
+        <Eey>
+            <div className='container'>
+            <Whaddap src={Logo} />
+            <LinkButtonBig to='/soup'>GET ME FOOD!</LinkButtonBig>
+            </div>
+        </Eey>
+    );
+};
+
+export default Home;
