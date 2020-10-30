@@ -7,7 +7,7 @@ import AddButton from '../buttons/AddButton'
 import buttonsStyle from '../buttons/buttonsStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyleAlert } from './StyleAlert'
-import Backdrop from './backdrop/Backdrop'
+import BlurBackground from './blur-background/BlurBackground'
 
 const Alert = (props) => {
   const alertContext = useContext(AlertContext)
@@ -37,7 +37,7 @@ const Alert = (props) => {
 
     alert !== null && (
       <StyleAlert>
-      <Backdrop/>
+      <BlurBackground/>
         <div key={alert.id} className={`alert-container alert-${alert.type}`}>
           <button onClick={handleClick} className={buttonsStyle.closeX}> x </button>
           <h1 className='name'>{alert.name}</h1>

@@ -7,8 +7,6 @@ import { SET_ALERT, REMOVE_ALERT, SET_BLUR } from '../types'
 const AlertState = (props) => {
     const initialState = null
 
-    // const initialState = { alert: null, blur: null }
-
     const [state, dispatch] = useReducer(alertReducer, initialState)
 
     const setAlert = (name, nextItem, type) => {
@@ -28,7 +26,6 @@ const AlertState = (props) => {
     const setBlur = () => {
         dispatch({
             type: SET_BLUR,
-            // payload: { name, nextItem, type },
         })
     }
 

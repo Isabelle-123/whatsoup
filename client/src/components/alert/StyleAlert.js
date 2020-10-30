@@ -5,18 +5,18 @@ export const StyleAlert = styled.div`
   justify-content: center;
   align-items: center;
   
-
-  
   .alert-container {
     width: 90%;
     margin-top: 10px;
     position: fixed;
-    ${'' /* margin-bottom: 10px; */}
     border-radius: 10px;
     height: 500px;
     z-index: 500;
     top: 20%;
-    height: 40vh;
+    height: 290px;
+   
+
+  transition: all 500ms ease-in-out;
   }
 
   .alert-Soup {

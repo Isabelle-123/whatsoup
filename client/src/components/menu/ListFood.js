@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import AlertContext from '../../context/alert/alertContext'
-import Backdrop from '../alert/backdrop/Backdrop'
 
 const ListFood = (props) => {
     const checkoutContext = useContext(CheckoutContext)
@@ -12,8 +11,6 @@ const ListFood = (props) => {
     const { setAlert, setBlur} = alertContext
 
     const { name, type, price, desc, img, alt, nextItem } = props
-
-   
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,7 +22,6 @@ const ListFood = (props) => {
 
     return (
         <>
-        {/* <Backdrop /> */}
             <div>
                 <ul className={menuStyle.cards}>
                     <li>
