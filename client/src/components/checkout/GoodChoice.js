@@ -56,11 +56,6 @@ ul {
 }
 
 @media (min-width: 560px){
- 
-    .checkout {
-        background: #dfd;
-        background: red;
-    }
 
     ul {
         margin: 3% 25% 3% 25%;
@@ -69,11 +64,6 @@ ul {
 
 @media (min-width: 1040px){
  
- .checkout {
-     background: #dfd;
-     background: green;
- }
-
  ul {
      margin: 2% 10% 2% 10%;
  }

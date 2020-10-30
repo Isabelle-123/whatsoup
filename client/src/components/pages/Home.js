@@ -15,7 +15,36 @@ const Eey = styled.div`
     height:100%;
     font-size: 10em;
     }
+
+
    
+    @media (min-width: 560px){
+        .container {
+            align-items: center;
+            width: 100%;
+        }
+
+        .img {
+            width: 40%;
+            margin-top: 5%;
+        }
+    }
+
+    @media (min-width: 1150px){
+    .img {
+        width: 30%;
+        margin-top: 5%;
+    }
+}
+
+@media (min-width: 1500px){
+
+    .img {
+        width: 20%;
+        margin-top: 5%;
+    }
+}
+
 
 `
 const Whaddap = styled.img`
@@ -28,8 +57,8 @@ const Home = () => {
     return (
         <Eey>
             <div className='container'>
-            <Whaddap src={Logo} />
-            <LinkButtonBig to='/soup'>GET ME FOOD!</LinkButtonBig>
+            <Whaddap src={Logo} className='img'/>
+            <LinkButtonBig to='/soup'>I'M HUNGRY. I NEED A SOUP!</LinkButtonBig>
             </div>
         </Eey>
     );
