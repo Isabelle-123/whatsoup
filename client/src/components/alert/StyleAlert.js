@@ -3,20 +3,20 @@ import styled from 'styled-components'
 export const StyleAlert = styled.div`
   display:flex; 
   justify-content: center;
+  align-items: center;
   
- .blurMe > *:not(#alert-container) {
-    filter: blur(3px);
-  }
+
   
   .alert-container {
     width: 90%;
     margin-top: 10px;
-
-    ${'' /* z-index: 10000;
-    margin-bottom: -500px; */}
-    margin-bottom: 10px;
+    position: fixed;
+    ${'' /* margin-bottom: 10px; */}
     border-radius: 10px;
-    border: 1px solid white;
+    height: 500px;
+    z-index: 500;
+    top: 20%;
+    height: 40vh;
   }
 
   .alert-Soup {
@@ -90,7 +90,6 @@ export const StyleAlert = styled.div`
  }
 
  .ingredients-container {
-   ${'' /* border-top: 1px solid black; */}
    background-color: snow;
    padding:0px;
    margin:0px;

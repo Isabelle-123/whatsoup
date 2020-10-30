@@ -2,10 +2,12 @@ import React, { useReducer } from 'react'
 import AlertContext from './alertContext'
 import alertReducer from './alertReducer'
 
-import { SET_ALERT, REMOVE_ALERT } from '../types'
+import { SET_ALERT, REMOVE_ALERT, SET_BLUR } from '../types'
 
 const AlertState = (props) => {
     const initialState = null
+
+    // const initialState = { alert: null, blur: null }
 
     const [state, dispatch] = useReducer(alertReducer, initialState)
 
@@ -23,11 +25,20 @@ const AlertState = (props) => {
     }
 
 
+    const setBlur = () => {
+        dispatch({
+            type: SET_BLUR,
+            // payload: { name, nextItem, type },
+        })
+    }
+
+
     return (
         <AlertContext.Provider
             value={{
                 alert: state,
                 setAlert,
+                setBlur,
                 removeAlert
             }}
         >

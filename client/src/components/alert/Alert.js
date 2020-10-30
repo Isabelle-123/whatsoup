@@ -7,23 +7,23 @@ import AddButton from '../buttons/AddButton'
 import buttonsStyle from '../buttons/buttonsStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyleAlert } from './StyleAlert'
+import Backdrop from './backdrop/Backdrop'
 
 const Alert = (props) => {
   const alertContext = useContext(AlertContext)
   const { alert, removeAlert } = alertContext
 
   const checkoutContext = useContext(CheckoutContext)
-  const { checkout, getCheckout } = checkoutContext
+  const { getCheckout } = checkoutContext
 
   const { name, type, price, } = props
 
   const handleClick = (e) => {
-    console.log(checkout);
     e.preventDefault()
     removeAlert()
   }
   
-  const closeAlert = (e) => {
+  const closeAlertOnNext = (e) => {
     e.preventDefault()
     removeAlert()
   }
@@ -37,6 +37,7 @@ const Alert = (props) => {
 
     alert !== null && (
       <StyleAlert>
+      <Backdrop/>
         <div key={alert.id} className={`alert-container alert-${alert.type}`}>
           <button onClick={handleClick} className={buttonsStyle.closeX}> x </button>
           <h1 className='name'>{alert.name}</h1>
@@ -47,7 +48,7 @@ const Alert = (props) => {
             <AddButton type={type} name={name} price={price} />
           </div>
           <div className='nextContainer'>
-            <LinkButton to={'/' + alert.nextItem} onClick={closeAlert}>NEXT</LinkButton>
+            <LinkButton to={'/' + alert.nextItem} onClick={closeAlertOnNext}>NEXT</LinkButton>
           </div>
           <section className='ingredients-container'>
             <h3 className='name'>Ingredients</h3>
@@ -57,6 +58,7 @@ const Alert = (props) => {
             </div>
           </section>
         </div>
+     
       </StyleAlert>
     )
   )

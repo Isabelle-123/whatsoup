@@ -7,6 +7,7 @@ import lowcarb from '../../assets/Soups/lowcarb.png'
 import missmuscle from '../../assets/Soups/missmuscle.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
+import Backdrop from '../alert/backdrop/Backdrop'
 
 
 const Soup = () => {
@@ -23,6 +24,7 @@ const Soup = () => {
     return (
         <div>
             <Alert />
+            {/* <Backdrop/> */}
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
             {
                 db.map(item => (
