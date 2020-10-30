@@ -4,7 +4,7 @@ import CheckoutContext from '../../../context/checkout/checkoutContext'
 
 const Friend = () => {
     const checkoutContext = useContext(CheckoutContext)
-    const { friend, addToFriend, getFriend, removeFriendItem } = checkoutContext
+    const { friend, addToFriend, getFriend } = checkoutContext
 
     const products = [
         { type: "Soup", id: 1, price: 50 },
