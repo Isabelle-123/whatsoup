@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import AlertContext from '../../context/alert/alertContext'
 
 const Test = styled.div`
-@media (max-width: 768px){
+${'' /* @media (max-width: 768px){ */}
   
   .Navbar {
     width:100%;
@@ -71,7 +71,7 @@ const Test = styled.div`
     background: #fec;
   }
 
-}`
+`
 
 
 const Navbar = (props) => {
