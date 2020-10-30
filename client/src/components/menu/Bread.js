@@ -6,7 +6,6 @@ import nuts from '../../assets/Bread/goingnuts.png'
 import baguette from '../../assets/Bread/asgoodasitbaguettes.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
-//import { v4 as uuidv4 } from 'uuid';
 
 
 

@@ -2,11 +2,6 @@ import React, { useContext } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import AlertContext from '../../context/alert/alertContext'
-//import Alert from '../alert/Alert'
-// import '.index.css'
-
-//import { createGlobalStyle } from 'styled-components'
-
 
 const ListFood = (props) => {
     const checkoutContext = useContext(CheckoutContext)
@@ -22,16 +17,11 @@ const ListFood = (props) => {
         e.preventDefault()
         setAlert(name, nextItem, type);
         addFood(type, name, price);
-        document.getElementById('root').classList.add('blurMe');
-        //document.root.classList.add('blurMe');
-        //document.getElementById('root').style.filter = 'grayscale(100%) blur(1px) '
     }
 
 
     return (
         <>
-       {/* <Alert type={type} name={name} price={price} />  */}
-
             <div>
                 <ul className={menuStyle.cards}>
                     <li>

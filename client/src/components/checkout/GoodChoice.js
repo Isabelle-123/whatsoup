@@ -56,8 +56,6 @@ ul {
 
 }
 
-
-
 `
 
 const GoodChoice = () => {

@@ -8,9 +8,6 @@ import buttonsStyle from '../buttons/buttonsStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyleAlert } from './StyleAlert'
 
-
-
-
 const Alert = (props) => {
   const alertContext = useContext(AlertContext)
   const { alert, removeAlert } = alertContext
@@ -35,19 +32,6 @@ const Alert = (props) => {
     getCheckout()
     // eslint-disable-next-line
   }, [])
-
-  // const amountOfItem = () => {
-  //   var res = Object.values(checkout.reduce((a, {name}) => {
-  //     a[name] = a[name] || {name, count: 0};
-  //     a[name].count++;
-  //     return a;
-  //   }, Object.create(null)))
-  //   console.log('resssssssssss' + JSON.stringify(res));
-  // }
-
-  // console.log('cheeee' + JSON.stringify(checkout));
-
-
 
   return (
 

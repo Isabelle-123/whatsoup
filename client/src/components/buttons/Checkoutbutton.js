@@ -12,8 +12,6 @@ const Checkoutbutton = () => {
         </button>
 
         </Link>
-
-
     )
 }
 

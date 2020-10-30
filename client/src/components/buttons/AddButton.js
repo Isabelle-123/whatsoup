@@ -11,7 +11,6 @@ const AddButton = (props) => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        //let food = { type, name, price }
         addFood(type, name, price)
     }
 

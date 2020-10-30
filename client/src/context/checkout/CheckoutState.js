@@ -1,19 +1,17 @@
 import React, { useReducer, useEffect } from 'react'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
-//import firebaseConfig from '../../firebase/firebaseIndex'
 import axios from 'axios'
 
-// firebaseConfig.databaseURL
 
 import {
   ADD_TO_FRIEND,
   ADD_FOOD,
   CANCEL_CHECKOUT,
-  UPDATE_CHECKOUT,
+  // UPDATE_CHECKOUT,
   GET_CHECKOUT,
   GET_FRIEND,
-  REMOVE_FRIEND_ITEM
+  // REMOVE_FRIEND_ITEM
   // DELETE_FOOD,
 
 } from '../types'
@@ -24,12 +22,10 @@ const initialState = { checkout: [], friend: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
 
-useEffect(() => {
-  getCheckout()
-  // eslint-disable-next-line
-}, [])      
-        // firebaseConfig.databaseURL,
-
+  useEffect(() => {
+    getCheckout()
+    // eslint-disable-next-line
+  }, [])      
 
   //Add item till checkout
   const addFood = async (type, name, price ) => {

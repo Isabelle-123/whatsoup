@@ -1,14 +1,9 @@
 import React from 'react'
 import ListFood from './ListFood'
-
 import amicake from '../../assets/Treats/pancake.png'
 import pancake from '../../assets/Treats/regularpan.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
-//import { v4 as uuidv4 } from 'uuid';
-
-
-
 
 const Treats = () => {
 

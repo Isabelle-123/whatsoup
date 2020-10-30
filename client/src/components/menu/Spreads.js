@@ -6,9 +6,6 @@ import aioli from '../../assets/Spreads/aioli.png'
 import avocado from '../../assets/Spreads/avocado.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
-//import { v4 as uuidv4 } from 'uuid';
-
-
 
 
 const Spreads = () => {

@@ -7,8 +7,7 @@ import lowcarb from '../../assets/Soups/lowcarb.png'
 import missmuscle from '../../assets/Soups/missmuscle.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
-//import AlertContext from '../../context/alert/alertContext'
-//import { v4 as uuidv4 } from 'uuid';
+
 
 const Soup = () => {
 

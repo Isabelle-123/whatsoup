@@ -1,22 +1,14 @@
 import styled from 'styled-components'
 
 export const StyleAlert = styled.div`
-
-    display:flex; 
-    justify-content: center;
+  display:flex; 
+  justify-content: center;
   
  .blurMe > *:not(#alert-container) {
     filter: blur(3px);
   }
   
   .alert-container {
-    ${'' /* background: rgba(77, 69, 69, 0.8);
-    color: white;
-    font-size: 2vh;
-    font-weight: 500;
-    padding: 2%;
-    width: 300px;
-    text-align: center; */}
     width: 90%;
     margin-top: 10px;
 
@@ -26,29 +18,30 @@ export const StyleAlert = styled.div`
     border-radius: 10px;
     border: 1px solid white;
   }
-  
 
   .alert-Soup {
-  background: #ffb;
- }
+    background: #ffb;
+  }
 
- .alert-Protein {
-  background: #fec;
-}
+  .alert-Protein {
+    background: #fec;
+  }
 
-.alert-Bread {
-  background: #cff;
-}
-.alert-Spreads {
-  background: #dfd;
-}
-.alert-Treats {
-  background: #ffb;
-}
-.alert-Beverages {
-  background: #fec;
-}
+  .alert-Bread {
+    background: #cff;
+  }
 
+  .alert-Spreads {
+    background: #dfd;
+  }
+
+  .alert-Treats {
+    background: #ffb;
+  }
+  
+  .alert-Beverages {
+    background: #fec;
+  }
 
  .name {
     font-weight: 100;

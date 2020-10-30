@@ -7,26 +7,27 @@ import AlertContext from '../../context/alert/alertContext'
 
 const Test = styled.div`
 @media (max-width: 768px){
-.Navbar {
-width:100%;
-height: 150px;
-left: 0px;
-top: 0px;
-background: #ffb
-}
+  
+  .Navbar {
+    width:100%;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+    background: #ffb
+  }
 
-.Upperbutt{
- display:flex;
- justify-content: space-between;
- padding: 10px;
-}
+  .Upperbutt{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
 
-.Nextstyle{
- display:flex;
- justify-content: flex-end;
- padding-bottom:10px;
- margin-right: 10px;
-}
+  .Nextstyle{
+    display:flex;
+    justify-content: flex-end;
+    padding-bottom:10px;
+    margin-right: 10px;
+  }
 
  .namePrice{
     display: flex;
@@ -40,34 +41,39 @@ background: #ffb
  .name {
     font-family: 'Lobster', cursive;
     font-size: 37px;
- }
+  }
 
- .price {
+  .price {
     margin-top: 10px;
- }
+  }
 
-.typeOfFood-Soup {
-  background: #ffb;
+  .typeOfFood-Soup {
+    background: #ffb;
+  }
 
- }
+  .typeOfFood-Protein {
+    background: #fec;
+  }
 
- .typeOfFood-Protein {
-  background: #fec;
-}
+  .typeOfFood-Bread {
+    background: #cff;
+  }
 
-.typeOfFood-Bread {
-  background: #cff;
-}
-.typeOfFood-Spreads {
-  background: #dfd;
-}
-.typeOfFood-Treats {
-  background: #ffb;
-}
-.typeOfFood-Beverages {
-  background: #fec;
-}
+  .typeOfFood-Spreads {
+    background: #dfd;
+  }
+
+  .typeOfFood-Treats {
+    background: #ffb;
+  }
+
+  .typeOfFood-Beverages {
+    background: #fec;
+  }
+
 }`
+
+
 const Navbar = (props) => {
   const alertContext = useContext(AlertContext)
   const { removeAlert } = alertContext
