@@ -16,7 +16,6 @@ const Friend = () => {
     ]
 
     useEffect(() => {
-        addToFriend()
         getFriend()
         // eslint-disable-next-line
     }, [])
@@ -38,10 +37,11 @@ const Friend = () => {
         }
     }
 
+   
 
     const handleAdd = (product) => {
         addToFriend(product.type, product.price)
-        window.location.reload()
+        // window.location.reload()
     }
 
     return (

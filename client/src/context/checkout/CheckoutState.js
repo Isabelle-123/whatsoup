@@ -88,54 +88,8 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
       // });
     }
   }
-  // const addToFriend = async (type, price) => {
-  //   let friend = { type, price }
-  //   const config = {
-  //       headers: {
-  //           'Content-Type': 'application/json',
-  //       },
-  //   }
-  //   try {
-  //     const res = await axios.post(
-  //       'https://ey-whatsoup.firebaseio.com/friend.json',
-  //       friend,
-  //       config
-  //     )
-  //     dispatch({
-  //       type: ADD_TO_FRIEND,
-  //       payload: res.data
-  //     })
 
-  //   } catch (err) {
-  //       console.error('error - could not add food item to friend')
-  //       //   dispatch({
-  //       //     type: CONTACT_ERROR,
-  //       //     payload: err.response.msg,
-  //   }
-  // }
-
-  // const getFriend = async () => {
-  //   try {
-  //     let res = await axios.get('https://ey-whatsoup.firebaseio.com/friend.json')
-
-  //     const friendCheckout = [];
-  //     for (let key in res.data) {
-  //       friendCheckout.push({
-  //         ...res.data[key],
-  //         id: key
-  //       });
-  //     }
-
-  //     dispatch({ type: GET_FRIEND, payload: friendCheckout })
-
-  //   } catch (err) {
-  //       // dispatch({
-  //       //   type: CONTACT_ERROR,
-  //       //   payload: err.response.msg
-  //       // });
-  //       console.log('error - could not get friend checkout')
-  //   }
-  // }
+ 
 
   return (
     <CheckoutContext.Provider

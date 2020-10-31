@@ -10,26 +10,29 @@ import AlertState from './context/alert/AlertState'
 import Checkout from './components/checkout/Checkout'
 import Home from './components/pages/Home'
 import CheckoutState from './context/checkout/CheckoutState'
+import FriendState from './context/for-friend/FriendState'
 
 function App() {
 
   return ( 
     <AlertState>
       <CheckoutState>
-        <Router>
-          <>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/soup' component={Soup} />
-              <Route exact path='/protein' component={Protein} />
-              <Route exact path='/bread' component={Bread} />
-              <Route exact path='/spreads' component={Spreads} />
-              <Route exact path='/treats' component={Treats} />
-              <Route exact path='/beverages' component={Beverages} />
-              <Route exact path='/checkout' component={Checkout} />
-            </Switch>
-          </>
-        </Router>
+        <FriendState>
+          <Router>
+            <>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/soup' component={Soup} />
+                <Route exact path='/protein' component={Protein} />
+                <Route exact path='/bread' component={Bread} />
+                <Route exact path='/spreads' component={Spreads} />
+                <Route exact path='/treats' component={Treats} />
+                <Route exact path='/beverages' component={Beverages} />
+                <Route exact path='/checkout' component={Checkout} />
+              </Switch>
+            </>
+          </Router>
+        </FriendState>
       </CheckoutState>
     </AlertState>
   );
