@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import CheckoutContext from '../../../context/checkout/checkoutContext'
+import FriendContext from '../../context/for-friend/friendContext'
 
 
 const Friend = () => {
-    const checkoutContext = useContext(CheckoutContext)
-    const { friend, addToFriend, getFriend } = checkoutContext
+    const friendContext = useContext(FriendContext)
+    const { friend, addToFriend, getFriend } = friendContext
 
     const products = [
         { type: "Soup", id: 1, price: 50 },
@@ -12,9 +12,8 @@ const Friend = () => {
         { type: "Bread", id: 3, price: 15 },
         { type: "Spread", id: 4, price: 25 },
         { type: "Treats", id: 5, price: 15 },
-        { type: "Beverages", id: 6, price: 25 }
+        { type: "Beverages", id: 6, price: 25 } 
     ]
-
 
     useEffect(() => {
         addToFriend()
