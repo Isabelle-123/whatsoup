@@ -4,15 +4,15 @@ export const StyledOrder = styled.div`
     background-color: #dfd;
 
     .container {
-        height: 100vh;
         background: #dfd;
         font-size: 15px;
         font-weight: 200;
         padding-top: 10px; 
-        padding-bottom: 10px;
+        padding-bottom: 20px;
         padding-left: 20px;
         padding-right: 20px;
         margin: 0;
+        border-bottom: 2px solid black;
     }
 
     .your-order{
