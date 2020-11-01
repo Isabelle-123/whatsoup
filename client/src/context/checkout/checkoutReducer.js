@@ -22,7 +22,7 @@ export default (state, action) => {
         case UPDATE_CHECKOUT:
             return {
                 ...state,
-                checkout: [...state.checkout, action.payload],
+                checkout: [...state.checkout + action.payload],
             }
         case CANCEL_CHECKOUT:
             // return {

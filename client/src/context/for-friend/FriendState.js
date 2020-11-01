@@ -8,10 +8,11 @@ import {
     ADD_TO_FRIEND,
     GET_FRIEND,
     // REMOVE_FRIEND_ITEM
+    GET_FRIEND_CART
 } from '../types'
 
 const FriendState = (props) => {
-  const initialState = { friend: [] }
+  const initialState = { friend: [], friendCart: null }
   const [state, dispatch] = useReducer(friendReducer, initialState)
 
   // useEffect(() => {
@@ -67,16 +68,57 @@ const FriendState = (props) => {
           // });
       console.log('error - could not get checkout')
     }
-  }    
+  }
 
-console.log(state.friend);
+ 
+  const getFriendCart = async () => {
+    try {
+      let res = state.friend
+      // await axios.get('https://whatsoup-7c207.firebaseio.com/friend.json/')
+    
+      console.log(res.price);
+      console.log(res.length);
+
+        let totalVal = 0;
+        for (let i = 0; i < res.length; i++) {
+          totalVal += res[i].price;
+        }
+       console.log(totalVal);
+
+      dispatch({ type: GET_FRIEND_CART, payload: totalVal })
+      
+    } catch (err) {
+          // dispatch({
+          //   type: CONTACT_ERROR,
+          //   payload: err.response.msg
+          // });
+      console.log('error - could not get friendcart')
+    }
+  }
+
+//   const orders = [];
+//   for (let key in res.data) {
+//     orders.push( {
+//     ...res.data[key],
+//     id: key
+//   });
+// }
+// dispatch({ type: GET_CHECKOUT, payload: orders })
+
+  
+
+
+
+// console.log(state.friend);
 
     return (
         <FriendContext.Provider
           value={{
             friend: state.friend,
+            friendCart: state.friendCart,
             addToFriend,
             getFriend,
+            getFriendCart,
           }}
         > 
       {props.children}

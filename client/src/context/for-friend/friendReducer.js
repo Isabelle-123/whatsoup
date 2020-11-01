@@ -1,6 +1,7 @@
 import {
     ADD_TO_FRIEND,
     GET_FRIEND,
+    GET_FRIEND_CART,
     //REMOVE_FRIEND_ITEM,
 } from '../types'
 
@@ -15,6 +16,11 @@ export default (state, action) => {
             return {
                 ...state,
                 friend: action.payload
+            }
+        case GET_FRIEND_CART:
+            return {
+                ...state,
+                friendCart: action.payload
             }
               // case REMOVE_FRIEND_ITEM:
         //     return {

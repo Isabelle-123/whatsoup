@@ -1,15 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import FriendContext from '../../context/for-friend/friendContext'
 
 const ListFriend = (props) => {
     const friendContext = useContext(FriendContext)
-    const { friend, addToFriend, getFriend } = friendContext
+    const { friend, addToFriend, getFriend, getFriendCart } = friendContext
 
-    const { id, type, price, amountOfItem} = props
+    const { id, type, price, amountOfItem, totalAmountGift} = props
+
+    useEffect(() => {
+        addToFriend();
+        getFriendCart();
+        // totalAmountGift();
+   
+        // eslint-disable-next-line
+        }, []
+    )
+  
 
     const handleAdd = (e) => {
         e.preventDefault()
         addToFriend(type, price)
+        // getFriendCart();
+
         // window.location.reload()
     }
 
