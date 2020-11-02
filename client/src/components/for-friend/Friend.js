@@ -68,7 +68,7 @@ const Friend = () => {
                     <div key={product.id}>
                         <span>
                             <div>{product.type}</div>
-                            <button onClick={(e) => handleAdd(product)}>+</button>
+                            <button onClick={() => handleAdd(product)}>+</button>
                             <button onClick={() => handleRemove(product)}>-</button>
                             <div>{product.price}</div>
                         </span>
