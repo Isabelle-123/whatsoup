@@ -11,7 +11,7 @@ import {
 } from '../types'
 
 const FriendState = (props) => {
-  const initialState = { friend: [], friendCart: null }
+  const initialState = { friend: []}
   const [state, dispatch] = useReducer(friendReducer, initialState)
 
   // useEffect(() => {
@@ -22,8 +22,8 @@ const FriendState = (props) => {
   // )
 console.log(state.friend);
 
-  const addToFriend = async (type, price) => {
-      let friend = { type, price }
+  const addToFriend = async (product) => {
+      // let friend = { type, price }
       const config = {
           headers: {
               'Content-Type': 'application/json',
@@ -32,12 +32,12 @@ console.log(state.friend);
       try {
         const res = await axios.post(
           'https://whatsoup-7c207.firebaseio.com/friend.json/',
-          friend,
+          product,
           config
         )
         dispatch({
           type: ADD_TO_FRIEND,
-          payload: {id: res.data, ...friend}
+          payload: {id: res.data, ...product}
         })
   
       } catch (err) {
