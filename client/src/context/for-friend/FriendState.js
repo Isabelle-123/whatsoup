@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 import FriendContext from './friendContext'
 import friendReducer from './friendReducer'
 import axios from 'axios'
@@ -7,8 +7,7 @@ import axios from 'axios'
 import {
     ADD_TO_FRIEND,
     GET_FRIEND,
-    // REMOVE_FRIEND_ITEM
-    GET_FRIEND_CART
+    REMOVE_FRIEND_ITEM
 } from '../types'
 
 const FriendState = (props) => {
@@ -21,6 +20,7 @@ const FriendState = (props) => {
   //     // eslint-disable-next-line
   //   }, []
   // )
+console.log(state.friend);
 
   const addToFriend = async (type, price) => {
       let friend = { type, price }
@@ -37,7 +37,7 @@ const FriendState = (props) => {
         )
         dispatch({
           type: ADD_TO_FRIEND,
-          payload: res.data
+          payload: {id: res.data, ...friend}
         })
   
       } catch (err) {
@@ -71,59 +71,44 @@ const FriendState = (props) => {
   }
 
  
-  const getFriendCart = async () => {
+  const removeFriendItem = async (product) => {
     try {
-      let res = state.friend
-      // await axios.get('https://whatsoup-7c207.firebaseio.com/friend.json/')
-    
-      console.log(res.price);
-      console.log(res.length);
+        let res = await axios.get('https://whatsoup-7c207.firebaseio.com/friend.json/')
 
-        let totalVal = 0;
-        for (let i = 0; i < res.length; i++) {
-          totalVal += res[i].price;
+        let friendCheckout = [];
+        for (let key in res.data) {
+            friendCheckout.push({
+                ...res.data[key],
+                id: key
+            });
         }
-       console.log(totalVal);
+        let foundIndex = friendCheckout.findIndex(item => item.type === product.type)
+        let IDtoRemove = friendCheckout[foundIndex].id
+        await axios.delete(`https://whatsoup-7c207.firebaseio.com/friend${IDtoRemove}.json/`);
 
-      dispatch({ type: GET_FRIEND_CART, payload: totalVal })
-      
+        dispatch({ type: REMOVE_FRIEND_ITEM, payload: { type: product.type, friend: friendCheckout } })
+
     } catch (err) {
-          // dispatch({
-          //   type: CONTACT_ERROR,
-          //   payload: err.response.msg
-          // });
-      console.log('error - could not get friendcart')
+      console.log(err);
+      // dispatch({
+      //   type: CHECKOUT_CANCEL_ERROR, 
+      //   payload: err.response.msg
+      // });
     }
   }
 
-//   const orders = [];
-//   for (let key in res.data) {
-//     orders.push( {
-//     ...res.data[key],
-//     id: key
-//   });
-// }
-// dispatch({ type: GET_CHECKOUT, payload: orders })
-
-  
-
-
-
-// console.log(state.friend);
-
-    return (
-        <FriendContext.Provider
-          value={{
-            friend: state.friend,
-            friendCart: state.friendCart,
-            addToFriend,
-            getFriend,
-            getFriendCart,
-          }}
-        > 
-      {props.children}
-      </FriendContext.Provider>
-    )
+  return (
+      <FriendContext.Provider
+        value={{
+          friend: state.friend,
+          addToFriend,
+          getFriend,
+          removeFriendItem
+        }}
+      > 
+    {props.children}
+    </FriendContext.Provider>
+  )
 }
 
 export default FriendState

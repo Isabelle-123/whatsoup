@@ -1,86 +1,54 @@
-import React, { useContext, useEffect } from 'react'
-import FriendContext from '../../context/for-friend/friendContext'
+// import React, { useContext, useEffect } from 'react'
+// import FriendContext from '../../context/for-friend/friendContext'
 
-const ListFriend = (props) => {
-    const friendContext = useContext(FriendContext)
-    const { friend, addToFriend, getFriend, getFriendCart } = friendContext
+// const ListFriend = (props) => {
+//     const friendContext = useContext(FriendContext)
+//     const { friend, addToFriend, getFriend, removeFriendItem } = friendContext
 
-    const { id, type, price, amountOfItem, totalAmountGift} = props
+//     const { id, type, price, amountOfItem, item } = props
 
-    useEffect(() => {
-        addToFriend();
-        getFriendCart();
-        // totalAmountGift();
-   
-        // eslint-disable-next-line
-        }, []
-    )
-  
+//     useEffect(() => {
+//         // addToFriend();
+//         getFriend();
+//         // total();
+//         // eslint-disable-next-line
+//         }, []
+//     )
 
-    const handleAdd = (e) => {
-        e.preventDefault()
-        addToFriend(type, price)
-        // getFriendCart();
+//     const handleAdd = (product) => {
+//         addToFriend(product.type, product.price)
+//     }
 
-        // window.location.reload()
-    }
+//     const handleRemove = (item) => {
+//         // e.preventDefault()
+//         removeFriendItem(item)
+//     }
 
-    // const countItems = () => {
-    //     let obj = []
-    //     friend.forEach((item) => {
-    //         console.log(obj[item.type])
-    //         if (!obj[item.type]) {
-    //           obj[item.type] = 1;
-    //         } else {
-    //           obj[item.type] += 1;
-    //         }
-    //       })
-  
+//     // const priceOfItems = () => {
+//     //     let typeOfFood = {type}
+//     //     if (typeOfFood.length > 0) {
+//     //         const totalPrice = friend.reduce((acc, curr) => acc + curr.price, 0)
+//     //         return totalPrice
+//     //     } else {
+//     //         return ''
+//     //     }
+//     // }
 
-    //     }
-       
-    
-
-
-    const priceOfItems = () => {
-        let typeOfFood = {type}
-        if (typeOfFood.length > 0) {
-            const totalPrice = friend.reduce((acc, curr) => acc + curr.price, 0)
-            return totalPrice
-        } else {
-            return ''
-        }
-        // for (let index = 0; index < friend.length; index++) {
-        //     const element = friend[index];
-        //     console.log(element);
-        //     console.log(friend);
-        // }
-
-        // if (friend.length > 0) {
-        //     const amount = friend.reduce((acc, curr) => acc + curr.length, 0)
-        //     return amount
-
-        // } else {
-        //     return ''
-
-        // }
-       
-    }
-    return (
-        <div className="wrapper">
+//     return (
+//         <div className="wrapper">
          
-            <div key={id}>
-                <span>
-                    <div>{amountOfItem} x stycken av  {type}</div>
-                    <button type='click' onClick={handleAdd}>+</button>
-                    {/* {<button onClick={() => handleRemove(product)}>-</button>} */}
-                    <div>{price}/styck {priceOfItems()}/total</div>
+//             <div key={id}>
+//                 <span>
+//                     <div>{amountOfItem} x stycken av {type}</div>
+//                     <button type='submit' onClick={() => handleAdd(product)}>+</button>
+//                     <button type='submit' onClick={() => handleRemove(product)}>-</button>
+//                     <div>{price}/styck total</div>
                  
-                </span>
-            </div>
+//                 </span>
+//             </div>
 
-         </div>
-    )
-}
+//          </div>
+//     )
+// }
 
-export default ListFriend
+// export default ListFriend

@@ -41,7 +41,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
         // firebaseConfig.databaseURL,
       'https://whatsoup-7c207.firebaseio.com/order.json/', 
       order, config )
-      dispatch({ type: ADD_FOOD, payload: (res.data) })
+      dispatch({ type: ADD_FOOD, payload: ( {id: res.data, ...order} ) })
 
     } catch (err) {
         console.log('error')
@@ -50,6 +50,8 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
           //     payload: err.response.msg,
     }
   }
+
+  console.log(state.checkout);
 
   // Get checkout
   const getCheckout = async () => {
