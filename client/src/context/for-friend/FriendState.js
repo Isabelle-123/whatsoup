@@ -72,6 +72,7 @@ console.log(state.friend);
 
  
   const removeFriendItem = async (product) => {
+    console.log(product.type);
     try {
         let res = await axios.get('https://whatsoup-7c207.firebaseio.com/friend.json/')
 
@@ -83,8 +84,10 @@ console.log(state.friend);
             });
         }
         let foundIndex = friendCheckout.findIndex(item => item.type === product.type)
+        console.log(foundIndex);
         let IDtoRemove = friendCheckout[foundIndex].id
-        await axios.delete(`https://whatsoup-7c207.firebaseio.com/friend${IDtoRemove}.json/`);
+        console.log(IDtoRemove);
+        await axios.delete(`https://whatsoup-7c207.firebaseio.com/friend/${IDtoRemove}.json/`);
 
         dispatch({ type: REMOVE_FRIEND_ITEM, payload: { type: product.type, friend: friendCheckout } })
 

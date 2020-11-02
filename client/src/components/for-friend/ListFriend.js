@@ -3,9 +3,9 @@ import FriendContext from '../../context/for-friend/friendContext'
 
 const ListFriend = (props) => {
     const friendContext = useContext(FriendContext)
-    const { friend, addToFriend, getFriend, removeFriendItem } = friendContext
+    const { addToFriend, removeFriendItem, friend } = friendContext
 
-    const { id, type, price, amountOfItem, item } = props
+    const { id, type, price } = props
 
 
     const handleAdd = (type, price) => {
@@ -18,12 +18,29 @@ const ListFriend = (props) => {
         removeFriendItem(product)
     }
 
+    const counter = (type) => {
+        let quantity = friend.reduce((acc, child) => {
+        if (!acc[child.type]) {
+            acc[child.type] = 0;
+            }
+            acc[child.type]++;
+            return acc;
+        }, {})
+
+        for(let i in quantity) {
+            if (i == type) {
+                return quantity[i] 
+            } 
+        }
+    }
+
     return (
         <div className="container">
             <ul key={id}>
                 <li>
                     <div>{type}</div>
                     <button type='submit' onClick={() => handleAdd(type, price)}>+</button>
+                    <div>amunt: {counter(type)}</div>
                     <button type='submit' onClick={() => handleRemove(type, price)}>-</button>
                     <div>{price}</div>
                  
