@@ -23,26 +23,15 @@ const ListFriend = (props) => {
             let quantity = friend.reduce((acc, child) => {
                 if (!acc[child.type]) {
                     acc[child.type] = 0;
-                    }
-                    acc[child.type]++;
+                } acc[child.type]++;
                     return acc;
-                }, {})
-        
-                for(let i in quantity) {
-                    if (i == type) {
-                        return quantity[i];
-                    } else {
-                        return '0';
-                    }
-                }
-
-
+            }, {})
+            for(let i in quantity) {
+                return i == type ? quantity[i] : 0
+            }
         } else {
             return 0
         }
-        
-       
-
     }
 
     return (
