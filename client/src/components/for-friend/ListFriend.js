@@ -7,14 +7,6 @@ const ListFriend = (props) => {
 
     const { id, type, price, amountOfItem, item } = props
 
-    useEffect(() => {
-        // addToFriend();
-        getFriend();
-        handleRemove();
-        // total();
-        // eslint-disable-next-line
-        }, []
-    )
 
     const handleAdd = (type, price) => {
         let product = {type, price}
@@ -25,16 +17,6 @@ const ListFriend = (props) => {
         let product = {type, price}
         removeFriendItem(product)
     }
-
-    // const priceOfItems = () => {
-    //     let typeOfFood = {type}
-    //     if (typeOfFood.length > 0) {
-    //         const totalPrice = friend.reduce((acc, curr) => acc + curr.price, 0)
-    //         return totalPrice
-    //     } else {
-    //         return ''
-    //     }
-    // }
 
     return (
         <div className="container">
