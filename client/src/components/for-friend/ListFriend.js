@@ -19,18 +19,19 @@ const ListFriend = (props) => {
     }
 
     const counter = (type) => {
-        if (friend.length != 0 ) {
-            let quantity = friend.reduce((acc, child) => {
-                if (!acc[child.type]) {
-                    acc[child.type] = 0;
-                } acc[child.type]++;
-                    return acc;
-            }, {})
-            for(let i in quantity) {
-                return i == type ? quantity[i] : 0
+        let quantity = friend.reduce((acc, child) => {
+            if (!acc[child.type]) {
+                acc[child.type] = 0;
+            } acc[child.type]++;
+                return acc;
+        }, {})
+
+        const entries = Object.entries(quantity)
+    
+        for (const [food, count] of entries) {
+            if (food === type ) {
+                return count
             }
-        } else {
-            return 0
         }
     }
 
