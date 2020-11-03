@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import FriendContext from '../../context/for-friend/friendContext'
+import style from './style.module.css'
 
 const ListFriend = (props) => {
     const friendContext = useContext(FriendContext)
@@ -38,12 +39,12 @@ const ListFriend = (props) => {
     return (
         <div className="container">
             <ul key={id}>
-                <li>
-                    <div>{type}</div>
-                    <button type='submit' onClick={() => handleAdd(type, price)}>+</button>
-                    <div>amunt: {counter(type)}</div>
-                    <button type='submit' onClick={() => handleRemove(type, price)}>-</button>
-                    <div>{price}</div>
+                <li className={style.listItems}>
+                    <div className={style.type}>{type}</div>
+                    <button className={style.counter} type='submit' onClick={() => handleAdd(type, price)}>+</button>
+                    <div className={style.counter}>{counter(type)}</div>
+                    <button className={style.counter} type='submit' onClick={() => handleRemove(type, price)}>-</button>
+                    <div>{price} SEK / piece</div>
                  
                 </li>
             </ul>

@@ -7,23 +7,19 @@ export const StyledOrder = styled.div`
         background: #dfd;
         font-size: 15px;
         font-weight: 200;
-        padding-top: 10px; 
-        padding-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
         margin: 0;
         border-bottom: 2px solid black;
     }
 
-    .your-order{
+    ${'' /* .your-order{
         margin: 0;
-        margin-top: 20px;
-    }
+    } */}
 
-    .your-order, .total-price {
+    ${'' /* .your-order, .total-price {
         font-size: 15px;
         font-weight: 400;
-    }   
+    }    */}
 
 
     .listItems {

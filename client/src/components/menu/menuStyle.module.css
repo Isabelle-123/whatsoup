@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-/* .blurMe > *:not(#alert-container) {
-  filter: blur(3px);
-} */
-
 .cards {
   list-style: none;
   width: 100%;

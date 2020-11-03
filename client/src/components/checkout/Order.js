@@ -51,7 +51,7 @@ console.log(checkout);
     return (
         <StyledOrder>
             <div className='container'>
-                <h1 className='your-order'>YOUR ORDER</h1>
+                <h3>YOUR ORDER</h3>
 
                 <section className='listItems'>
                     <div>{listItems()}</div>
@@ -59,8 +59,8 @@ console.log(checkout);
                 </section>
 
                 <section className='container-total'>
-                    <h2 className='total-price'>TOTAL PRICE</h2>
-                    <h5 className='finalPrice'>{total()} sek</h5>
+                    <h3>TOTAL PRICE</h3>
+                    <h3>{total()} SEK</h3>
                 </section>
 
                 <section className='cancelOk'>

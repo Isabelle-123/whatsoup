@@ -38,13 +38,13 @@ ${'' /* @media (max-width: 768px){ */}
     font-size: 25px;
  }
 
- .name {
+ ${'' /* .name {
     font-family: 'Lobster', cursive;
     font-size: 37px;
-  }
+  } */}
 
   .price {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   .typeOfFood-Soup {
@@ -91,7 +91,7 @@ const Navbar = (props) => {
           <LinkButton to='/checkout' onClick={closeAlert}>CHECKOUT</LinkButton>
         </div>
         <div className="namePrice">
-          <div className="name">{props.typeOfFood}</div>
+          <h1>{props.typeOfFood}</h1>
           <div className="price">/ {props.price} SEK</div>
         </div>
         <div className="Nextstyle">

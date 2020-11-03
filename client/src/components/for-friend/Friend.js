@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import FriendContext from '../../context/for-friend/friendContext'
 import ListFriend from './ListFriend'
+import style from './style.module.css'
 
 const Friend = () => {
     const friendContext = useContext(FriendContext)
-    const { friend, getFriend, addToFriend, removeFriendItem } = friendContext
+    const { friend, getFriend } = friendContext
 
     const products = [
         { type: "Soup", id: 1, price: 50 },
@@ -33,15 +34,16 @@ const Friend = () => {
     }
 
     return (
-        <div className="wrapper">
-     <div><h1>Which friend is this treasure for?</h1>
+        <div className={style.container}>
+            <div>
+                <h2 className={style.h2}>Which friend is this treasure for?</h2>
                 <input type="text" placeholder="Name" />
                 <input type="text" placeholder="Number" />
             </div>
-            <div>
+            {/* <h3>
                 Shopping Cart: {friend.length}
-            </div>
-            <div>Total: {total()}</div>
+            </h3> */}
+            <h3>TOTAL PRICE {total()} SEK</h3>
             {
                 products.map(product => (
                     <ListFriend type={product.type} id={product.id} price={product.price} key={product.id} />
