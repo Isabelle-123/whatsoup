@@ -41,13 +41,12 @@ const ListFriend = (props) => {
             <ul key={id}>
                 <li className={style.listItems}>
                     <div className={style.type}>{type}</div>
-                    <section className={style.center}>
+                    <section className={style.counterContainer}>
                         <button className={style.counterButton} type='submit' onClick={() => handleAdd(type, price)}>+</button>
                         <div className={style.counter}>{counter(type)}</div>
                         <button className={style.counterButton} type='submit' onClick={() => handleRemove(type, price)}>-</button>
                     </section>
                     <div className={style.counter}>{price} SEK</div>
-                 
                 </li>
             </ul>
          </div>

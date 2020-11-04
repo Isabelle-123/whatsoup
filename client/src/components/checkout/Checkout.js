@@ -2,16 +2,11 @@ import React, {useEffect, useContext} from 'react'
 import Order from './Order'
 import GoodChoice from './GoodChoice'
 import CheckoutContext from '../../context/checkout/checkoutContext'
-//import FriendContext from '../../context/for-friend/friendContext'
-
-import Friend from '../for-friend/Friend'
+import SendToFriend from '../for-friend/SendToFriend'
 
 const Checkout = () => {
     const checkoutContext = useContext(CheckoutContext)
     const { getCheckout } = checkoutContext
-
-    // const friendContext = useContext(FriendContext)
-    // const { friend, getFriend, addToFriend } = friendContext
 
     useEffect(() => {
       getCheckout()
@@ -22,7 +17,7 @@ const Checkout = () => {
         <>
             <GoodChoice />
             <Order />
-            <Friend />
+            <SendToFriend />
         </>
     )
 }

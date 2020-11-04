@@ -40,10 +40,6 @@ const Friend = () => {
                 <input type="text" placeholder=" Name" />
                 <input type="text" placeholder=" Number" />
             </section>
-            {/* <h3>
-                Shopping Cart: {friend.length}
-            </h3> */}
-           
             {
                 products.map(product => (
                     <ListFriend type={product.type} id={product.id} price={product.price} key={product.id} />
@@ -55,7 +51,7 @@ const Friend = () => {
             </section>
            
             <h2>Send a message</h2>
-            <textarea className={style.textarea}/>
+            <textarea/>
         </div>
     );
 };

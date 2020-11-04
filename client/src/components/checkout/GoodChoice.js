@@ -12,6 +12,8 @@ const StyleGoodChoice = styled.div`
     text-align: center;
 }
 
+
+
 .checkout {
     background: #dfd;
     font-weight: 100;
@@ -27,13 +29,6 @@ const StyleGoodChoice = styled.div`
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
-
-${'' /* .choice {
-    font-size: 40px;
-    font-weight: 100;
-    margin: 0;
-    align-text: center;
-} */}
 
 .text {
     font-size: 25px;
@@ -56,17 +51,15 @@ ul {
 }
 
 @media (min-width: 560px){
-
     ul {
         margin: 3% 25% 3% 25%;
     }
 }
 
 @media (min-width: 1040px){
- 
- ul {
+    ul {
      margin: 2% 10% 2% 10%;
- }
+    }
 }
 
 `
