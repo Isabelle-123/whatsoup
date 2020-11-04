@@ -12,16 +12,6 @@ export const StyledOrder = styled.div`
         border-bottom: 2px solid black;
     }
 
-    ${'' /* .your-order{
-        margin: 0;
-    } */}
-
-    ${'' /* .your-order, .total-price {
-        font-size: 15px;
-        font-weight: 400;
-    }    */}
-
-
     .listItems {
         display: flex;
         flex-direction: row;
@@ -64,13 +54,14 @@ export const StyledOrder = styled.div`
 
         .container {
             padding: 1% 25% 0% 25%;
+            padding-bottom: 3%;
         }
     } 
 
     @media (min-width: 1040px){
 
         .container {
-            padding: 1% 35% 0% 35%;
+            padding: 1% 35% 1% 35%;
         }
     }
 }

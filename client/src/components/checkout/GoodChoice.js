@@ -25,7 +25,7 @@ const StyleGoodChoice = styled.div`
 .container-choice {
     background: #ffb;
     margin: 0;
-    padding-top: 15px;
+    padding: 20px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
@@ -39,15 +39,11 @@ const StyleGoodChoice = styled.div`
 
 ul {
     list-style: none;
-    ${'' /* display:flex; 
-    flex-direction: column; */}
     display:flex; 
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 0;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 0px 0px 20px 0px;
+    margin-top: 10px;
 }
 
 @media (min-width: 560px){
