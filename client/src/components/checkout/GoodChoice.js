@@ -12,8 +12,6 @@ const StyleGoodChoice = styled.div`
     text-align: center;
 }
 
-
-
 .checkout {
     background: #dfd;
     font-weight: 100;
@@ -54,7 +52,7 @@ ul {
 
 @media (min-width: 1040px){
     ul {
-     margin: 2% 10% 2% 10%;
+     margin: 2% 10% 0% 10%;
     }
 }
 
