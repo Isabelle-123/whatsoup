@@ -17,22 +17,15 @@ const StyleGoodChoice = styled.div`
     font-weight: 100;
     font-size: 30px;
     margin: 0;
-    padding: 15px 0px 15px 0px;
+    padding: 20px 0px 15px 0px;
 }
 
 .container-choice {
     background: #ffb;
     margin: 0;
-    padding-top: 15px;
+    padding: 20px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-}
-
-.choice {
-    font-size: 40px;
-    font-weight: 100;
-    margin: 0;
-    align-text: center;
 }
 
 .text {
@@ -44,29 +37,23 @@ const StyleGoodChoice = styled.div`
 
 ul {
     list-style: none;
-    ${'' /* display:flex; 
-    flex-direction: column; */}
     display:flex; 
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 0;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 0px 0px 20px 0px;
+    margin-top: 10px;
 }
 
 @media (min-width: 560px){
-
     ul {
         margin: 3% 25% 3% 25%;
     }
 }
 
 @media (min-width: 1040px){
- 
- ul {
-     margin: 2% 10% 2% 10%;
- }
+    ul {
+     margin: 2% 10% 0% 10%;
+    }
 }
 
 `
@@ -77,12 +64,12 @@ const GoodChoice = () => {
         <div className='container'>
         <h1 className='checkout'>Checkout</h1>
         <section className='container-choice'>
-            <h2 className='choice'> Good Choice!</h2>
-            <p className='text'>Do you feel pleased or do you want something more?</p>
+            <h1> Good Choice!</h1>
+            <h2>Do you feel pleased or do you want something more?</h2>
         <ul>
             <li><LinkButtonWide to='/soup'>SOUP</LinkButtonWide></li>
             <li><LinkButtonWide to='/protein'>PROTEIN</LinkButtonWide></li>
-            <li><LinkButtonWide to='/breads'>BREADS</LinkButtonWide></li>
+            <li><LinkButtonWide to='/bread'>BREAD</LinkButtonWide></li>
             <li><LinkButtonWide to='/spreads'>SPREADS</LinkButtonWide></li>
             <li><LinkButtonWide to='/treats'>TREATS</LinkButtonWide></li>
             <li><LinkButtonWide to='/beverages'>BEVERAGES</LinkButtonWide></li>

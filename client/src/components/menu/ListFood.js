@@ -19,7 +19,6 @@ const ListFood = (props) => {
         addFood(type, name, price);
     }
 
-
     return (
         <>
             <div>

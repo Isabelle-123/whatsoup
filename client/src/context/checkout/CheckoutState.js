@@ -5,12 +5,12 @@ import axios from 'axios'
 
 
 import {
-  ADD_TO_FRIEND,
+  // ADD_TO_FRIEND,
   ADD_FOOD,
   CANCEL_CHECKOUT,
   // UPDATE_CHECKOUT,
   GET_CHECKOUT,
-  GET_FRIEND,
+  // GET_FRIEND,
   // REMOVE_FRIEND_ITEM
   // DELETE_FOOD,
 
@@ -18,7 +18,7 @@ import {
 
 
 const CheckoutState = (props) => {
-const initialState = { checkout: [], friend: [] }
+const initialState = { checkout: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
 
@@ -41,7 +41,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
         // firebaseConfig.databaseURL,
       'https://whatsoup-7c207.firebaseio.com/order.json/', 
       order, config )
-      dispatch({ type: ADD_FOOD, payload: (res.data) })
+      dispatch({ type: ADD_FOOD, payload: ( {id: res.data, ...order} ) })
 
     } catch (err) {
         console.log('error')
@@ -50,6 +50,8 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
           //     payload: err.response.msg,
     }
   }
+
+  console.log(state.checkout);
 
   // Get checkout
   const getCheckout = async () => {
@@ -72,8 +74,6 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
           // });
       console.log('error - could not get checkout')
     }
-
-
   }
     
   // Delete checkout
@@ -90,65 +90,19 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
       // });
     }
   }
-  const addToFriend = async (type, price) => {
-    let friend = { type, price }
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    }
-    try {
-      const res = await axios.post(
-        'https://ey-whatsoup.firebaseio.com/friend.json',
-        friend,
-        config
-      )
-      dispatch({
-        type: ADD_TO_FRIEND,
-        payload: res.data
-      })
 
-    } catch (err) {
-        console.error('error - could not add food item to friend')
-        //   dispatch({
-        //     type: CONTACT_ERROR,
-        //     payload: err.response.msg,
-    }
-  }
-
-  const getFriend = async () => {
-    try {
-      let res = await axios.get('https://ey-whatsoup.firebaseio.com/friend.json')
-
-      const friendCheckout = [];
-      for (let key in res.data) {
-        friendCheckout.push({
-          ...res.data[key],
-          id: key
-        });
-      }
-
-      dispatch({ type: GET_FRIEND, payload: friendCheckout })
-
-    } catch (err) {
-        // dispatch({
-        //   type: CONTACT_ERROR,
-        //   payload: err.response.msg
-        // });
-        console.log('error - could not get friend checkout')
-    }
-}
+ 
 
   return (
     <CheckoutContext.Provider
       value={{
         checkout: state.checkout,
-        friend: state.friend,
+        // friend: state.friend,
         addFood,
         cancelCheckout,
         getCheckout,
-        addToFriend,
-        getFriend,
+        // addToFriend,
+        // getFriend,
       }}
     >
     {props.children}

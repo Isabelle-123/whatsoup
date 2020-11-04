@@ -13,10 +13,7 @@ export const StyleAlert = styled.div`
     height: 500px;
     z-index: 500;
     top: 20%;
-    height: 290px;
-   
-
-  transition: all 500ms ease-in-out;
+    height: 300px;
   }
 
   .alert-Soup {
@@ -80,19 +77,28 @@ export const StyleAlert = styled.div`
    color: blue;
  }
 
- .nextContainer {
+ .nextContainer  {
    display: flex;
    justify-content: center;
-   color:blue;
    width: 100%;
    margin-bottom: 10px;
    padding-bottom: 3px;
+ }
+  .read-more-container {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-bottom: 100px;
+   padding-bottom: 5px;
  }
 
  .ingredients-container {
    background-color: snow;
    padding:0px;
    margin:0px;
+   height: 42%;
  }
+
+ 
  
 `

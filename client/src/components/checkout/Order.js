@@ -9,8 +9,8 @@ const Order = () => {
 
     const listItems =  () => {
       if (checkout.length > 0) {
-        const allItems = checkout.map(item => (
-            <div key={item.id}>
+        const allItems = checkout.map((item, index) => (
+            <div key={index}>
                 {item.name}
             </div>
         ))
@@ -23,8 +23,8 @@ const Order = () => {
 
     const listPrice = () => {
         if (checkout.length > 0) {
-            const allItems = checkout.map(item => (
-                <div key={item.id}>
+            const allItems = checkout.map((item, index)=> (
+                <div key={index}>
                     {item.price} SEK
                 </div>
             ))
@@ -51,16 +51,16 @@ console.log(checkout);
     return (
         <StyledOrder>
             <div className='container'>
-                <h1 className='your-order'>YOUR ORDER</h1>
+                <h3>YOUR ORDER</h3>
 
                 <section className='listItems'>
-                    <div>{listItems()}</div>
-                    <div>{listPrice()}</div>
+                    <div className='item'>{listItems()}</div>
+                    <div className='item'>{listPrice()}</div>
                 </section>
 
-                <section className='container-total'>
-                    <h2 className='total-price'>TOTAL PRICE</h2>
-                    <h5 className='finalPrice'>{total()} sek</h5>
+                <section className='container-price'>
+                    <h3>TOTAL PRICE</h3>
+                    <h3>{total()} SEK</h3>
                 </section>
 
                 <section className='cancelOk'>

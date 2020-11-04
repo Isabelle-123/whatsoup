@@ -3,9 +3,6 @@ import {
     CANCEL_CHECKOUT,
     UPDATE_CHECKOUT,
     GET_CHECKOUT,
-    ADD_TO_FRIEND,
-    GET_FRIEND,
-    //REMOVE_FRIEND_ITEM,
     //UPDATE_CHECKOUT
 } from '../types'
 
@@ -25,7 +22,7 @@ export default (state, action) => {
         case UPDATE_CHECKOUT:
             return {
                 ...state,
-                checkout: [...state.checkout, action.payload],
+                checkout: [...state.checkout + action.payload],
             }
         case CANCEL_CHECKOUT:
             // return {
@@ -36,24 +33,9 @@ export default (state, action) => {
                 checkout: state.checkout.filter(
                   order => order.id !== action.payload
                 )
-              };
-        case ADD_TO_FRIEND:
-            return {
-                ...state,
-                friend: [...state.friend, action.payload],
-            }
-        // case REMOVE_FRIEND_ITEM:
-        //     return {
-        //         ...state,
-        //         friend: state.friend.filter((item) => item.id !== action.payload),
-        //     };
-        case GET_FRIEND:
-            return {
-                ...state,
-                friend: action.payload
-            }
+            };
         default:
             return state
-    }
+    }   
 }
 

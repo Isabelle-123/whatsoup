@@ -4,27 +4,13 @@ export const StyledOrder = styled.div`
     background-color: #dfd;
 
     .container {
-        height: 100vh;
         background: #dfd;
         font-size: 15px;
         font-weight: 200;
-        padding-top: 10px; 
-        padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
         margin: 0;
+        border-bottom: 2px solid black;
     }
-
-    .your-order{
-        margin: 0;
-        margin-top: 20px;
-    }
-
-    .your-order, .total-price {
-        font-size: 15px;
-        font-weight: 400;
-    }   
-
 
     .listItems {
         display: flex;
@@ -34,9 +20,15 @@ export const StyledOrder = styled.div`
         margin-bottom: 10px;
     }
 
-    .container-total {
+    .item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .container-price {
         display: flex;
         justify-content: space-between;
+       
     }
 
     .total-price {
@@ -62,13 +54,14 @@ export const StyledOrder = styled.div`
 
         .container {
             padding: 1% 25% 0% 25%;
+            padding-bottom: 3%;
         }
     } 
 
     @media (min-width: 1040px){
 
         .container {
-            padding: 1% 35% 0% 35%;
+            padding: 1% 35% 1% 35%;
         }
     }
 }
