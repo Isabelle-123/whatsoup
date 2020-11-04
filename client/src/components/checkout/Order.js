@@ -54,11 +54,11 @@ console.log(checkout);
                 <h3>YOUR ORDER</h3>
 
                 <section className='listItems'>
-                    <div>{listItems()}</div>
-                    <div>{listPrice()}</div>
+                    <div className='item'>{listItems()}</div>
+                    <div className='item'>{listPrice()}</div>
                 </section>
 
-                <section className='container-total'>
+                <section className='container-price'>
                     <h3>TOTAL PRICE</h3>
                     <h3>{total()} SEK</h3>
                 </section>

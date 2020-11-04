@@ -37,14 +37,16 @@ const ListFriend = (props) => {
     }
 
     return (
-        <div className="container">
+        <div className={style.listFriend}>
             <ul key={id}>
                 <li className={style.listItems}>
                     <div className={style.type}>{type}</div>
-                    <button className={style.counter} type='submit' onClick={() => handleAdd(type, price)}>+</button>
-                    <div className={style.counter}>{counter(type)}</div>
-                    <button className={style.counter} type='submit' onClick={() => handleRemove(type, price)}>-</button>
-                    <div>{price} SEK / piece</div>
+                    <section className={style.center}>
+                        <button className={style.counterButton} type='submit' onClick={() => handleAdd(type, price)}>+</button>
+                        <div className={style.counter}>{counter(type)}</div>
+                        <button className={style.counterButton} type='submit' onClick={() => handleRemove(type, price)}>-</button>
+                    </section>
+                    <div className={style.counter}>{price} SEK</div>
                  
                 </li>
             </ul>

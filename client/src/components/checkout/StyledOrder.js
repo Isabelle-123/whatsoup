@@ -30,9 +30,15 @@ export const StyledOrder = styled.div`
         margin-bottom: 10px;
     }
 
-    .container-total {
+    .item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .container-price {
         display: flex;
         justify-content: space-between;
+       
     }
 
     .total-price {
