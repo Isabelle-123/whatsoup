@@ -24,6 +24,7 @@ const StyleGoodChoice = styled.div`
     background: #ffb;
     margin: 0;
     padding: 20px;
+
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
@@ -46,7 +47,7 @@ ul {
 
 @media (min-width: 560px){
     ul {
-        margin: 3% 25% 3% 25%;
+        margin: 3% 25% 1% 25%;
     }
 }
 

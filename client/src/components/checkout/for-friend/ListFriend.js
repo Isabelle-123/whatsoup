@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import FriendContext from '../../context/for-friend/friendContext'
+import FriendContext from '../../../context/for-friend/friendContext'
 import style from './style.module.css'
 
 const ListFriend = (props) => {
