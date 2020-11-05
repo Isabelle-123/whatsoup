@@ -20,15 +20,16 @@ const StyledSendToFriend = styled.div`
 `
 
 const SendToFriend = () => {
-  const [showResults, setShowResults] = useState(false)
-  const onClick = () => setShowResults(true)
+  const [showFriend, setShowFriend] = useState(false)
+
+  const toggleFriend = () => setShowFriend(!showFriend)
 
   return (
     <StyledSendToFriend>
       <div className='container'>
       <h2>Would you like to send a delicious soup to a friend?</h2>
-      <div><LinkButtonWide onClick={onClick}>GREAT IDEA!</LinkButtonWide></div>
-      { showResults ? <Friend /> : null}
+      <div><LinkButtonWide onClick={toggleFriend}>GREAT IDEA!</LinkButtonWide></div>
+      { showFriend === true ? <Friend /> : null }
       </div>
       </StyledSendToFriend>
   );

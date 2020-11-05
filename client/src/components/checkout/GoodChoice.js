@@ -47,7 +47,7 @@ ul {
 
 @media (min-width: 560px){
     ul {
-        margin: 3% 25% 3% 25%;
+        margin: 3% 25% 1% 25%;
     }
 }
 
