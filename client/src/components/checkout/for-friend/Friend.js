@@ -35,7 +35,7 @@ const Friend = () => {
 
     return (
         <div className={style.container}>
-            <section>
+            <section className={style.inputSection} >
                 <h2 className={style.h2}>Which friend is this treasure for?</h2>
                 <input type="text" placeholder=" Name" />
                 <input type="text" placeholder=" Number" />
