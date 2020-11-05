@@ -53,8 +53,8 @@ export const StyledOrder = styled.div`
     @media (min-width: 560px){
 
         .container {
-            padding: 1% 25% 0% 25%;
-            padding-bottom: 3%;
+            padding-left: 25%;
+            padding-right:25%;
         }
     } 
 
