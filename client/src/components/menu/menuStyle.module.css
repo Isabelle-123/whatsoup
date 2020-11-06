@@ -64,7 +64,7 @@
 
   .cards {
     width: 250px;
-    margin: 10px;
+    padding: 10px;
   }
 
   img {
@@ -75,6 +75,7 @@
     width: 96.5%;
     position: relative;
     margin-top: -110px;
+    height: 90px;
   }
 }
 
