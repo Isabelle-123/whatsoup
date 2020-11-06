@@ -1,12 +1,10 @@
 import React, { useContext } from 'react';
 import Backbutton from '../buttons/Backbutton'
 import LinkButton from '../buttons/LinkButton'
-//import styles from './navbarStyle.module.css'
 import styled from 'styled-components'
 import AlertContext from '../../context/alert/alertContext'
 
 const Test = styled.div`
-${'' /* @media (max-width: 768px){ */}
   
   .Navbar {
     width:100%;

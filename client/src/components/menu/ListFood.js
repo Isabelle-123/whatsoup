@@ -21,24 +21,20 @@ const ListFood = (props) => {
 
     return (
         <>
-            {/* <div className={menuStyle.container}>
-                <ul className={menuStyle.cards}> */}
-                    <li className={menuStyle.cards}>
-                        <img
-                            className={menuStyle.img}
-                            src={img}
-                            alt={alt}
-                        />
-                        <section className={menuStyle.foodInfoContainer}>
-                            <div className={menuStyle.nameButton}>
-                                <h2>{name}</h2>
-                                <button type='click' onClick={handleSubmit} className={menuStyle.button}> + </button>
-                            </div>
-                            <h5 className={menuStyle.text}>{desc}</h5>
-                        </section>
-                    </li>
-                {/* </ul>
-            </div> */}
+            <li className={menuStyle.cards}>
+                <img
+                    className={menuStyle.img}
+                    src={img}
+                    alt={alt}
+                />
+                <section className={menuStyle.foodInfoContainer}>
+                    <div className={menuStyle.nameButton}>
+                        <h2>{name}</h2>
+                        <button type='click' onClick={handleSubmit} className={menuStyle.button}> + </button>
+                    </div>
+                    <h5 className={menuStyle.text}>{desc}</h5>
+                </section>
+            </li>
         </>
     )
 }
