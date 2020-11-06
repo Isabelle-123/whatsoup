@@ -21,9 +21,9 @@ const ListFood = (props) => {
 
     return (
         <>
-            <div>
-                <ul className={menuStyle.cards}>
-                    <li>
+            {/* <div className={menuStyle.container}>
+                <ul className={menuStyle.cards}> */}
+                    <li className={menuStyle.cards}>
                         <img
                             className={menuStyle.img}
                             src={img}
@@ -37,8 +37,8 @@ const ListFood = (props) => {
                             <h5 className={menuStyle.text}>{desc}</h5>
                         </section>
                     </li>
-                </ul>
-            </div>
+                {/* </ul>
+            </div> */}
         </>
     )
 }
