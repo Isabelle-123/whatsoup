@@ -25,7 +25,7 @@ const Spreads = () => {
             <ul className={menuStyle.container}>
             {
                 db.map(item => (
-                    <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
+                    <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Spread' + item.name} nextItem={item.nextItem} next={item.next}/>
                 ))}
             </ul>
         </div>
