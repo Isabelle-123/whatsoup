@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
 import LinkButtonWide from '../../buttons/LinkButtonWide'
 import Friend from './Friend'
 import style from './style.module.css'

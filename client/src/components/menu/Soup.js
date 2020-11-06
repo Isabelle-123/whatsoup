@@ -7,7 +7,7 @@ import lowcarb from '../../assets/Soups/lowcarb.png'
 import missmuscle from '../../assets/Soups/missmuscle.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import menuStyle from './menuStyle.module.css'
 
 
 
@@ -26,10 +26,12 @@ const Soup = () => {
         <div>
             <Alert />
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
+            <ul className={menuStyle.container}>
             {
                 db.map(item => (
                     <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
                 ))}
+            </ul>
         </div>
     )
 }
