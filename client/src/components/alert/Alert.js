@@ -54,7 +54,7 @@ const Alert = (props) => {
             <h3 className='name'>Ingredients</h3>
             <p className='text'>Ingredients list and carbs. Do adjustments here. We will fix it!</p>
             <div className='read-more-container'>
-            <LinkButton to={'/' + alert.nextItem}>READ MORE</LinkButton>
+            <LinkButton>READ MORE</LinkButton>
             </div>
           </section>
         </div>
