@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import AlertContext from '../../context/alert/alertContext'
 import LinkButton from '../buttons/LinkButton'
 import DeleteButton from '../buttons/DeleteButton'
@@ -8,16 +8,14 @@ import CheckoutContext from '../../context/checkout/checkoutContext'
 import { StyleAlert } from './StyleAlert'
 import BlurBackground from './blur-background/BlurBackground'
 
-const Alert = (props) => {
+const Alert = () => {
   const alertContext = useContext(AlertContext)
   const { alert, removeAlert } = alertContext
 
   const checkoutContext = useContext(CheckoutContext)
-  const { checkout, getCheckout } = checkoutContext
+  const { checkout } = checkoutContext
 
-  const { name } = props
-
-  const closeModal = (e) => {
+  const closeAlert = (e) => {
     e.preventDefault()
     removeAlert()
   }
@@ -45,19 +43,14 @@ const Alert = (props) => {
     }
   }
 
-  useEffect(() => {
-    getCheckout()
-    // eslint-disable-next-line
-  }, [])
-
   return (
 
     alert !== null && (
       <StyleAlert>
       <BlurBackground/>
         <div key={alert.id} className={`alert-container alert-${alert.type}`}>
-          <button onClick={closeModal} className={buttonsStyle.closeX}> x </button>
-          <h1 className='name'>{name}</h1>
+          <button onClick={closeAlert} className={buttonsStyle.closeX}> x </button>
+          <h1 className='name'>{alert.name}</h1>
           <p className='text'>You placed {alert.name} in your shopping cart.</p>
 
           <div className='amountAddRemoveItem'>

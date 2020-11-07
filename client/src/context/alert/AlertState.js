@@ -9,10 +9,10 @@ const AlertState = (props) => {
 
     const [state, dispatch] = useReducer(alertReducer, initialState)
 
-    const setAlert = (name, nextItem, type) => {
+    const setAlert = (name, nextItem, type, price) => {
         dispatch({
             type: SET_ALERT,
-            payload: { name, nextItem, type },
+            payload: { name, nextItem, type, price},
         })
     }
 

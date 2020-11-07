@@ -12,10 +12,10 @@ const Protein = () => {
 
 
     const db = [
-        { type: "Protein", id: 6, name: "Fried Tofu", desc: "100 gram", price: 30, img: fried, nextItem: "bread" },
-        { type: "Protein", id: 7, name: "Grilled Chicken", desc: "100 gram", price: 30, img: chicken, nextItem: "bread" },
-        { type: "Protein", id: 8, name: "Hand-peeled Shrimps", desc: "75 gam", price: 30, img: shrimp, nextItem: "bread" },
-        { type: "Protein", id: 9, name: "Grilled Beef", desc: "50 gram", price: 30, img: beef, nextItem: "bread" },
+        { type: "Protein", key: 6, name: "Fried Tofu", desc: "100 gram", price: 30, img: fried, nextItem: "bread" },
+        { type: "Protein", key: 7, name: "Grilled Chicken", desc: "100 gram", price: 30, img: chicken, nextItem: "bread" },
+        { type: "Protein", key: 8, name: "Hand-peeled Shrimps", desc: "75 gam", price: 30, img: shrimp, nextItem: "bread" },
+        { type: "Protein", key: 9, name: "Grilled Beef", desc: "50 gram", price: 30, img: beef, nextItem: "bread" },
 
     ]
 

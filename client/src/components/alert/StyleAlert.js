@@ -12,7 +12,7 @@ export const StyleAlert = styled.div`
     border-radius: 10px;
     z-index: 100;
     top: 20%;
-    height: 290px;
+    height: 310px;
   }
 
   .alert-Soup {
@@ -84,8 +84,8 @@ export const StyleAlert = styled.div`
 
  .ingredients-container {
    background-color: snow;
-   padding:10px;
    margin:0px;
+   padding-bottom: 10px;
  }
 
   .read-more-container {

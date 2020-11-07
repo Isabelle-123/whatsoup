@@ -7,7 +7,7 @@ const AddButton = (props) => {
     const checkoutContext = useContext(CheckoutContext)
     const { addFood } = checkoutContext
 
-    const { name, type, price } = props
+    const { type, name, price } = props
 
     const handleClick = () => {
         addFood(type, name, price)

@@ -15,7 +15,7 @@ const ListFood = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setBlur();
-        setAlert(name, nextItem, type);
+        setAlert(name, nextItem, type, price);
         addFood(type, name, price);
     }
 
