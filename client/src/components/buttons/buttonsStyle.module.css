@@ -7,6 +7,18 @@
   margin: 5px;
 }
 
+.addRemove {
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid black;
+  text-decoration: 'none';
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
 .LinkButtonWide {
   border-radius: 5px;
   background-color: transparent;

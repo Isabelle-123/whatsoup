@@ -1,5 +1,6 @@
 
 export const ADD_FOOD = 'ADD_FOOD'
+export const REMOVE_ITEM = 'REMOVE_ITEM'
 export const UPDATE_CHECKOUT = 'UPDATE_CHECKOUT'
 export const CANCEL_CHECKOUT = 'CANCEL_CHECKOUT'
 export const GET_CHECKOUT = 'GET_CHECKOUT'
