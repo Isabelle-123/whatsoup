@@ -65,7 +65,7 @@ export const StyleAlert = styled.div`
  .amount {
   border-radius: 5px;
   border: 1px solid black;
-  width: 15px;
+  height: 20px;
   margin:5px;
   font-size: 15px;
   padding-left: 5px;
@@ -94,17 +94,23 @@ export const StyleAlert = styled.div`
    width: 100%;
  }
 
- @media (min-width: 500px) {
-  .alert-container {
-    width: 450px;
-    height: 310px;
+  @media (min-width: 560px) {
+    .alert-container {
+      width: 440px;
+      height: 280px;
+    }
   }
 
- .text {
-    font-size: 20px;
-  }
-}
+  @media (min-width: 1040px) {
+    .alert-container {
+      width: 530px;
+      height: 290px;
+    }
 
+  .text {
+      font-size: 20px;
+    }
+  }
  
  
 `
