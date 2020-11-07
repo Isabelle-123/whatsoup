@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
 import axios from 'axios'
@@ -16,13 +16,6 @@ const CheckoutState = (props) => {
 const initialState = { checkout: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
-
-  // useEffect(() => {
-  //   getCheckout()
-  //   // eslint-disable-next-line
-  // }, [])      
-
-  //Add item till checkout
   const addFood = async (type, name, price ) => {
     let order = { type, name, price }
     const config = {
