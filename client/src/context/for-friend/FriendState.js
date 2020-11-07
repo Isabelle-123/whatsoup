@@ -14,37 +14,29 @@ const FriendState = (props) => {
   const initialState = { friend: []}
   const [state, dispatch] = useReducer(friendReducer, initialState)
 
-  // useEffect(() => {
-  //   getFriend();
-  //   addToFriend();
-  //     // eslint-disable-next-line
-  //   }, []
-  // )
-
   const addToFriend = async (product) => {
-      // let friend = { type, price }
-      const config = {
-          headers: {
-              'Content-Type': 'application/json',
-          },
-      }
-      try {
-        const res = await axios.post(
-          'https://whatsoup-7c207.firebaseio.com/friend.json/',
-          product,
-          config
-        )
-        dispatch({
-          type: ADD_TO_FRIEND,
-          payload: {id: res.data, ...product}
-        })
-  
-      } catch (err) {
-          console.error('error - could not add food item to friend')
-          //   dispatch({
-          //     type: CONTACT_ERROR,
-          //     payload: err.response.msg,
-      }
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+    try {
+      const res = await axios.post(
+        'https://whatsoup-7c207.firebaseio.com/friend.json/',
+        product,
+        config
+      )
+      dispatch({
+        type: ADD_TO_FRIEND,
+        payload: {id: res.data, ...product}
+      })
+
+    } catch (err) {
+        console.error('error - could not add food item to friend')
+        //   dispatch({
+        //     type: CONTACT_ERROR,
+        //     payload: err.response.msg,
+    }
   }
 
   const getFriend = async () => {

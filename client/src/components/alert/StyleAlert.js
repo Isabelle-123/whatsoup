@@ -65,7 +65,8 @@ export const StyleAlert = styled.div`
  .amount {
   border-radius: 5px;
   border: 1px solid black;
-  height: 20px;
+  height: 18px;
+  width: 18px;
   margin:5px;
   font-size: 15px;
   padding-left: 5px;

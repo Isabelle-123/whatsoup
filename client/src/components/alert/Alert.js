@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import AlertContext from '../../context/alert/alertContext'
 import LinkButton from '../buttons/LinkButton'
 import DeleteButton from '../buttons/DeleteButton'
@@ -13,7 +13,13 @@ const Alert = () => {
   const { alert, removeAlert } = alertContext
 
   const checkoutContext = useContext(CheckoutContext)
-  const { checkout } = checkoutContext
+  const { checkout, getCheckout } = checkoutContext
+
+
+  useEffect(() => {
+    getCheckout()
+    // eslint-disable-next-line
+}, [])
 
   const closeAlert = (e) => {
     e.preventDefault()
@@ -33,9 +39,9 @@ const Alert = () => {
             return acc;
     }, {})
 
-    
+    console.log(checkout);
     const entries = Object.entries(quantity)
-
+    console.log(quantity);
     for (const [food, count] of entries) {
         if (food === name ) {
             return count
