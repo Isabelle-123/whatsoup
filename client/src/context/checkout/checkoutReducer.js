@@ -3,7 +3,7 @@ import {
     CANCEL_CHECKOUT,
     UPDATE_CHECKOUT,
     GET_CHECKOUT,
-    //UPDATE_CHECKOUT
+    REMOVE_ITEM
 } from '../types'
 
 
@@ -14,6 +14,12 @@ export default (state, action) => {
                 ...state,
                 checkout: [...state.checkout, action.payload],
             }
+        case REMOVE_ITEM:
+            let foundIndex = action.payload.checkout.findIndex(item => item.name === action.payload.name)
+            return {
+                ...state,
+                checkout: state.checkout.filter((product, index) => index !== foundIndex)
+            };
         case GET_CHECKOUT:
             return {
                 ...state,
@@ -25,9 +31,6 @@ export default (state, action) => {
                 checkout: [...state.checkout + action.payload],
             }
         case CANCEL_CHECKOUT:
-            // return {
-            //     checkout: []
-            // }
             return {
                 ...state,
                 checkout: state.checkout.filter(

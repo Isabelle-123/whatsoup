@@ -5,15 +5,10 @@ import axios from 'axios'
 
 
 import {
-  // ADD_TO_FRIEND,
   ADD_FOOD,
   CANCEL_CHECKOUT,
-  // UPDATE_CHECKOUT,
   GET_CHECKOUT,
-  // GET_FRIEND,
-  // REMOVE_FRIEND_ITEM
-  // DELETE_FOOD,
-
+  REMOVE_ITEM
 } from '../types'
 
 
@@ -22,10 +17,10 @@ const initialState = { checkout: [] }
 const [state, dispatch] = useReducer(checkoutReducer, initialState)
 
 
-  useEffect(() => {
-    getCheckout()
-    // eslint-disable-next-line
-  }, [])      
+  // useEffect(() => {
+  //   getCheckout()
+  //   // eslint-disable-next-line
+  // }, [])      
 
   //Add item till checkout
   const addFood = async (type, name, price ) => {
@@ -51,7 +46,36 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
     }
   }
 
-  console.log(state.checkout);
+  const removeItem = async (product) => {
+    console.log(product.name);
+    try {
+        let res = await axios.get('https://whatsoup-7c207.firebaseio.com/order.json/')
+
+        let checkoutArray = [];
+        for (let key in res.data) {
+          checkoutArray.push({
+            ...res.data[key],
+            id: key
+          });
+        }
+        let foundIndex = checkoutArray.findIndex(item => item.name === product.name)
+        console.log(foundIndex);
+        let IDtoRemove = checkoutArray[foundIndex].id
+        console.log(IDtoRemove);
+        await axios.delete(`https://whatsoup-7c207.firebaseio.com/order/${IDtoRemove}.json/`);
+
+        dispatch({ type: REMOVE_ITEM, payload: { name: product.name, checkout: checkoutArray } })
+
+    } catch (err) {
+      console.log(err);
+      // dispatch({
+      //   type: CHECKOUT_CANCEL_ERROR, 
+      //   payload: err.response.msg
+      // });
+    }
+  }
+
+  
 
   // Get checkout
   const getCheckout = async () => {
@@ -97,12 +121,11 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
     <CheckoutContext.Provider
       value={{
         checkout: state.checkout,
-        // friend: state.friend,
         addFood,
+        removeItem,
         cancelCheckout,
         getCheckout,
-        // addToFriend,
-        // getFriend,
+
       }}
     >
     {props.children}

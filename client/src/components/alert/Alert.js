@@ -14,11 +14,11 @@ const Alert = (props) => {
   const { alert, removeAlert } = alertContext
 
   const checkoutContext = useContext(CheckoutContext)
-  const { getCheckout } = checkoutContext
+  const { checkout, getCheckout } = checkoutContext
 
   const { name, type, price, } = props
 
-  const handleClick = (e) => {
+  const closeModal = (e) => {
     e.preventDefault()
     removeAlert()
   }
@@ -26,6 +26,24 @@ const Alert = (props) => {
   const closeAlertOnNext = (e) => {
     e.preventDefault()
     removeAlert()
+  }
+
+  const counter = (name) => {
+    let quantity = checkout.reduce((acc, child) => {
+        if (!acc[child.name]) {
+            acc[child.name] = 0;
+        } acc[child.name]++;
+            return acc;
+    }, {})
+
+    
+    const entries = Object.entries(quantity)
+
+    for (const [food, count] of entries) {
+        if (food === name ) {
+            return count
+        }
+    }
   }
 
   useEffect(() => {
@@ -39,17 +57,18 @@ const Alert = (props) => {
       <StyleAlert>
       <BlurBackground/>
         <div key={alert.id} className={`alert-container alert-${alert.type}`}>
-          <button onClick={handleClick} className={buttonsStyle.closeX}> x </button>
-          <h1 className='name'>{alert.name}</h1>
+          <button onClick={closeModal} className={buttonsStyle.closeX}> x </button>
+          <h1 className='name'>{name}</h1>
           <p className='text'>You placed {alert.name} in your shopping cart.</p>
           <div className='amountAddRemoveItem'>
-            <div className='amount'>1</div>
-            <DeleteButton />
-            <AddButton type={type} name={name} price={price} />
+            <DeleteButton type={alert.type} name={alert.name} price={alert.price} />
+            <div className='amount'>{counter(alert.name)}</div>
+            <AddButton type={alert.type} name={alert.name} price={alert.price} />
           </div>
           <div className='nextContainer'>
             <LinkButton to={'/' + alert.nextItem} onClick={closeAlertOnNext}>NEXT</LinkButton>
           </div>
+
           <section className='ingredients-container'>
             <h3 className='name'>Ingredients</h3>
             <p className='text'>Ingredients list and carbs. Do adjustments here. We will fix it!</p>

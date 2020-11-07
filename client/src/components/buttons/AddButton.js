@@ -9,15 +9,14 @@ const AddButton = (props) => {
 
     const { name, type, price } = props
 
-    const handleClick = (e) => {
-        e.preventDefault()
+    const handleClick = () => {
         addFood(type, name, price)
     }
 
 
     return (
         <>
-            <button onClick={handleClick} className={buttonsStyle.buttonWithBorder}>ADD</button>
+            <button onClick={handleClick} className={buttonsStyle.buttonWithBorder}>+</button>
         </>
     )
 }

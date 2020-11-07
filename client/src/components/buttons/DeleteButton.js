@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useContext }from 'react'
 import buttonsStyle from './buttonsStyle.module.css'
+import CheckoutContext from '../../context/checkout/checkoutContext'
 
-const DeleteButton = () => {
+const DeleteButton = (props) => {
 
-    // delete food from checkout
-    //handleClick={deleteFood}
-    // deleteItem = (e) => {
-    //     e.preventDefault()
-    // }
+    const checkoutContext = useContext(CheckoutContext)
+    const { removeItem } = checkoutContext
+
+    const { name, type, price } = props
+
+    const handleClick = () => {
+       let product = { name, type, price  } 
+        removeItem(product)
+    }
 
     return (
         <>
-            <button className={buttonsStyle.buttonWithBorder}>DELETE</button>
+            <button onClick={handleClick} className={buttonsStyle.buttonWithBorder}>-</button>
         </>
     )
 }

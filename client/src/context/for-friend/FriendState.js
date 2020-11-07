@@ -20,7 +20,6 @@ const FriendState = (props) => {
   //     // eslint-disable-next-line
   //   }, []
   // )
-console.log(state.friend);
 
   const addToFriend = async (product) => {
       // let friend = { type, price }
