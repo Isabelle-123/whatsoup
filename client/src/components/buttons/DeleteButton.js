@@ -16,7 +16,7 @@ const DeleteButton = (props) => {
 
     return (
         <>
-            <button onClick={handleClick} className={buttonsStyle.buttonWithBorder}>-</button>
+            <button onClick={handleClick} className={buttonsStyle.addRemove}>-</button>
         </>
     )
 }

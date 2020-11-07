@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect } from 'react'
 import AlertContext from '../../context/alert/alertContext'
 import LinkButton from '../buttons/LinkButton'
@@ -16,7 +15,7 @@ const Alert = (props) => {
   const checkoutContext = useContext(CheckoutContext)
   const { checkout, getCheckout } = checkoutContext
 
-  const { name, type, price, } = props
+  const { name } = props
 
   const closeModal = (e) => {
     e.preventDefault()
@@ -60,6 +59,7 @@ const Alert = (props) => {
           <button onClick={closeModal} className={buttonsStyle.closeX}> x </button>
           <h1 className='name'>{name}</h1>
           <p className='text'>You placed {alert.name} in your shopping cart.</p>
+
           <div className='amountAddRemoveItem'>
             <DeleteButton type={alert.type} name={alert.name} price={alert.price} />
             <div className='amount'>{counter(alert.name)}</div>

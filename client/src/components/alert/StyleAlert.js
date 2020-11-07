@@ -6,14 +6,13 @@ export const StyleAlert = styled.div`
   align-items: center;
   
   .alert-container {
-    width: 90%;
+    width:300px;
     margin-top: 10px;
     position: fixed;
     border-radius: 10px;
-    height: 500px;
-    z-index: 500;
+    z-index: 100;
     top: 20%;
-    height: 300px;
+    height: 290px;
   }
 
   .alert-Soup {
@@ -52,15 +51,15 @@ export const StyleAlert = styled.div`
  .text {
     margin: 0px 15px 0px 15px;
     padding: 5px;
+    padding-top: 10px;
     font-weight: 200;
     text-align: center;
     font-size: 15px;
- }
+  }
 
  .amountAddRemoveItem {
    display: flex;
    justify-content: center;
-  
   }
 
  .amount {
@@ -75,10 +74,6 @@ export const StyleAlert = styled.div`
   text-align: center;
  }
 
- .linkButton {
-   color: blue;
- }
-
  .nextContainer  {
    display: flex;
    justify-content: center;
@@ -86,20 +81,29 @@ export const StyleAlert = styled.div`
    margin-bottom: 10px;
    padding-bottom: 3px;
  }
+
+ .ingredients-container {
+   background-color: snow;
+   padding:10px;
+   margin:0px;
+ }
+
   .read-more-container {
    display: flex;
    justify-content: center;
    width: 100%;
-   margin-bottom: 100px;
-   padding-bottom: 5px;
  }
 
- .ingredients-container {
-   background-color: snow;
-   padding:0px;
-   margin:0px;
-   height: 42%;
- }
+ @media (min-width: 500px) {
+  .alert-container {
+    width: 450px;
+    height: 310px;
+  }
+
+ .text {
+    font-size: 20px;
+  }
+}
 
  
  
