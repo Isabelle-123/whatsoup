@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { useState } from 'react'
 import ListFood from './ListFood'
 import butter from '../../assets/Spreads/butter.png'
 import beet from '../../assets/Spreads/beet.png'
@@ -7,6 +7,7 @@ import avocado from '../../assets/Spreads/avocado.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
 import menuStyle from './menuStyle.module.css'
+import Spinner from '../layout/Spinner'
 
 const Spreads = () => {
 
@@ -18,11 +19,20 @@ const Spreads = () => {
 
     ]
 
+    const [loaded, setLoaded] = useState(false);
+
     return (
         <div>
             <Alert />
             <Navbar typeOfFood='Spreads' price='15' next='/treats' />
-            <ul className={menuStyle.container}>
+
+            {loaded ? null : (
+                <Spinner/>
+            )}
+
+            <ul className={menuStyle.container}
+            style={loaded ? {} : { display: 'none' }}
+                onLoad={() => setLoaded(true)}>
             {
                 db.map(item => (
                     <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Spread' + item.name} nextItem={item.nextItem} next={item.next}/>

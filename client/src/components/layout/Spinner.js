@@ -2,10 +2,11 @@ import React, { Fragment } from 'react';
 import spinner from './spinner.gif';
 
 export default () => (
-  <Fragment>
+  <Fragment
+    >
     <img
       src={spinner}
-      style={{ width: '200px', margin: 'auto'}}
+      style={{ width: '40%',  marginLeft: '30%', marginRight: '30%' }}
       alt='Loading...'
     />
   </Fragment>

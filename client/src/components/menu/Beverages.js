@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ListFood from './ListFood'
 import lime from '../../assets/Beverages/lime.png'
 import apple from '../../assets/Beverages/apple.png'
@@ -8,7 +8,7 @@ import kombucha from '../../assets/Beverages/kombucha.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
 import menuStyle from './menuStyle.module.css'
-
+import Spinner from '../layout/Spinner'
 
 const Beverages = () => {
 
@@ -21,11 +21,20 @@ const Beverages = () => {
 
     ]
 
+    const [loaded, setLoaded] = useState(false);
+
     return (
         <div>
             <Alert />
             <Navbar typeOfFood='Beverages' price='15' next='/checkout' />
-            <ul className={menuStyle.container}>
+
+            {loaded ? null : (
+                <Spinner/>
+            )}
+
+            <ul className={menuStyle.container}
+                style={loaded ? {} : { display: 'none' }}
+                onLoad={() => setLoaded(true)}>
             {
                 db.map(item => (
                     <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Beverage' + item.name} nextItem={item.nextItem} next={item.next}/>

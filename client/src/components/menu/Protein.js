@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'
 import Navbar from '../navbar/Navbar'
 import ListFood from './ListFood'
 import fried from '../../assets/Protein/friedtofu.png'
@@ -7,6 +7,7 @@ import shrimp from '../../assets/Protein/shrimps.png'
 import beef from '../../assets/Protein/beef.png'
 import Alert from '../alert/Alert'
 import menuStyle from './menuStyle.module.css'
+import Spinner from '../layout/Spinner'
 
 const Protein = () => {
 
@@ -19,11 +20,20 @@ const Protein = () => {
 
     ]
 
+    const [loaded, setLoaded] = useState(false);
+
     return (
         <div>
             <Alert />
             <Navbar typeOfFood='Protein' price='30' next='/bread' />
-            <ul className={menuStyle.container}>
+
+            {loaded ? null : (
+                <Spinner/>
+            )}
+
+            <ul className={menuStyle.container}
+                style={loaded ? {} : { display: 'none' }}
+                onLoad={() => setLoaded(true)}>
             {
                 db.map(item => (
                     <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Protein' + item.name} nextItem={item.nextItem} next={item.next}/>

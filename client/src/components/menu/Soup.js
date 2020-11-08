@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ListFood from './ListFood'
 import healing from '../../assets/Soups/healing.png'
 import chillie from '../../assets/Soups/chillibillie.png'
@@ -8,6 +8,7 @@ import missmuscle from '../../assets/Soups/missmuscle.png'
 import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
 import menuStyle from './menuStyle.module.css'
+import Spinner from '../layout/Spinner'
 
 const Soup = () => {
 
@@ -19,16 +20,26 @@ const Soup = () => {
         { type: "Soup", key: 5, name: "Low Carb", desc: "Sweet potato, ginger, cummin marsala, garlic, coconut milk", price: 50, img: lowcarb, nextItem: "PROTEIN", next: "protein" }
     ]
 
+    const [loaded, setLoaded] = useState(false);
 
     return (
         <div>
             <Alert />
             <Navbar typeOfFood='Soup' price='50' next='/protein' />
-            <ul className={menuStyle.container}>
-            {
+
+            {loaded ? null : (
+                <Spinner/>
+            )}
+
+            <ul className={menuStyle.container}
+                style={loaded ? {} : { display: 'none' }}
+                onLoad={() => setLoaded(true)}>
+
+                {
                 db.map(item => (
                     <ListFood type={item.type} name={item.name} price={item.price} key={item.key} desc={item.desc} img={item.img} alt={'Soup' + item.name} nextItem={item.nextItem} next={item.next}/>
                 ))}
+
             </ul>
         </div>
     )
