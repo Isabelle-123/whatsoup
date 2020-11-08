@@ -1,6 +1,6 @@
 # Whats'oup?
 
-🔧🔧🔧*THE PAGE IS UNDER CONSTRUCTION*🔧🔧🔧
+🔧🔧🔧 _THE PAGE IS UNDER CONSTRUCTION_ 🔧🔧🔧
 
 But you can have a sneaky peak here: http://whatsoup.surge.sh/ - obs the page is made in mobile view first!
 
