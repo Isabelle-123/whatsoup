@@ -2,7 +2,7 @@
 
 _THE PAGE IS UNDER CONSTRUCTION_
 
-But you can take a sneaky peak on here: http://whatsoup.surge.sh/soup - obs the page is made in mobile view first!
+But you can take a sneaky peak on here: http://whatsoup.surge.sh/ - obs the page is made in mobile view first!
 
 Whats'oup? is a page to buy soups for home delivery. You can add bread, spreads, treats and bevereages to your meal. The app is made in "mobile view first".
 
