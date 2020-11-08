@@ -12,7 +12,7 @@ In the future the will be a login page and possibility to send a soup for a frie
 
 The app is made in mobile view first.
 
-## 🗄️ Tech stack
+## 🦄 Tech stack
 
 The site has frontend (React) and a backend (Node.js).
 
