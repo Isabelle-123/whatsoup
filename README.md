@@ -28,6 +28,6 @@ The site has frontend (React) and a backend (Node.js).
 
 Clone the project.
 
-- Run "npm i" in roots folder.
+- Run "npm i" in root folder.
 - Go to client and run "npm i"
 - Go to back to root folder and run "npm run dev"
