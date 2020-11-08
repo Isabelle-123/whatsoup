@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import menuStyle from './menuStyle.module.css'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import AlertContext from '../../context/alert/alertContext'
+import Spinner from '../layout/Spinner'
 
 const ListFood = (props) => {
     const checkoutContext = useContext(CheckoutContext)
@@ -19,13 +20,24 @@ const ListFood = (props) => {
         addFood(type, name, price);
     }
 
+    const [loaded, setLoaded] = useState(false);
+
     return (
         <>
-            <li className={menuStyle.cards}>
+        {loaded ? null : (
+        <Spinner  style={{
+            height: '400px',
+            width: '400px',
+          }}/>
+      )}
+            <li className={menuStyle.cards}
+            style={loaded ? {} : { display: 'none' }}
+                    onLoad={() => setLoaded(true)}>
                 <img
                     className={menuStyle.img}
                     src={img}
                     alt={alt}
+                    
                 />
                 <section className={menuStyle.foodInfoContainer}>
                     <div className={menuStyle.nameButton}>

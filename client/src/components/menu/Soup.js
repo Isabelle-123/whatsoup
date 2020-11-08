@@ -9,8 +9,6 @@ import Navbar from '../navbar/Navbar'
 import Alert from '../alert/Alert'
 import menuStyle from './menuStyle.module.css'
 
-
-
 const Soup = () => {
 
     const db = [

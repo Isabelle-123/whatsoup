@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ListFood from './ListFood'
 import butter from '../../assets/Spreads/butter.png'
 import beet from '../../assets/Spreads/beet.png'
