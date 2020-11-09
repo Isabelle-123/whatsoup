@@ -17,6 +17,7 @@
   font-weight: 200;
   margin: 0;
   width: 100%;
+  max-width: 560px;
 }
 
 .inputSection {
@@ -69,27 +70,4 @@
   width: 100%;
   justify-content: space-between;
   margin: 10px 0 10px 0;
-}
-
-@media (min-width: 560px) {
-  .container {
-    width: 100%;
-  }
-
-  .inputSection {
-    width: 100%;
-  }
-
-  .wrapper {
-    padding-left: 25%;
-    padding-right: 25%;
-  }
-}
-
-@media (min-width: 1040px) {
-  .container {
-    width: 60%;
-    padding-left: 25%;
-    padding-right: 25%;
-  }
 }

@@ -48,24 +48,27 @@ const Order = () => {
     }
 
     return (
-        <div className={cStyle.containerOrder}>
-            <h3>YOUR ORDER</h3>
+        <div className={cStyle.wrapper}>
+            <div className={cStyle.containerOrder}>
+                <h3>YOUR ORDER</h3>
 
-            <section className={cStyle.listItems}>
-                <div>{listItems()}</div>
-                <div>{listPrice()}</div>
-            </section>
+                <section className={cStyle.listItems}>
+                    <div>{listItems()}</div>
+                    <div>{listPrice()}</div>
+                </section>
 
-            <section className={cStyle.containerPrice}>
-                <h3>TOTAL PRICE</h3>
-                <h3>{total()} SEK</h3>
-            </section>
+                <section className={cStyle.containerPrice}>
+                    <h3>TOTAL PRICE</h3>
+                    <h3>{total()} SEK</h3>
+                </section>
 
-            <section className={cStyle.cancelOk}>
-                <LinkButtonWide to='/' onClick={Cancel}>CANCEL</LinkButtonWide>
-                <LinkButtonWide>OK</LinkButtonWide>
-            </section>
+                <section className={cStyle.cancelOk}>
+                    <LinkButtonWide to='/' onClick={Cancel}>CANCEL</LinkButtonWide>
+                    <LinkButtonWide>OK</LinkButtonWide>
+                </section>
+            </div>
         </div>
+
     )
 }
 
