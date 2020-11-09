@@ -13,8 +13,8 @@ const Friend = () => {
         { type: "Soup", id: 1, price: 50 },
         { type: "Protein", id: 2, price: 30 },
         { type: "Bread", id: 3, price: 15 },
-        { type: "Spread", id: 4, price: 25 },
-        { type: "Treats", id: 5, price: 15 },
+        { type: "Spread", id: 4, price: 10 },
+        { type: "Treats", id: 5, price: 20 },
         { type: "Beverages", id: 6, price: 25 }
     ]
 

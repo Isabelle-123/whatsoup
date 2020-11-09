@@ -10,8 +10,8 @@ import Spinner from '../layout/Spinner'
 const Treats = () => {
 
     const db = [
-        { type: "Treats", key: 18, name: "American Pancakes", desc: "With lemon and blueberrys", price: 15, img: amicake, nextItem: "beverages", next: "beverages" },
-        { type: "Treats", key: 19, name: "Pancakes", desc: "with cream and jam", price: 15, img: pancake, nextItem: "beverages", next: "beverages" },
+        { type: "Treats", key: 18, name: "American Pancakes", desc: "With lemon and blueberrys", price: 20, img: amicake, nextItem: "beverages", next: "beverages" },
+        { type: "Treats", key: 19, name: "Pancakes", desc: "with cream and jam", price: 20, img: pancake, nextItem: "beverages", next: "beverages" },
     ]
 
     const [loaded, setLoaded] = useState(false);
@@ -19,7 +19,7 @@ const Treats = () => {
     return (
         <div>
             <Alert />
-            <Navbar typeOfFood='Treats' price='15' next='/beverages' />
+            <Navbar typeOfFood='Treats' price='20' next='/beverages' />
 
             {loaded ? null : (
                 <Spinner/>
