@@ -1,0 +1,84 @@
+/* CHECKOUT & GOOD CHOICE */
+
+.container {
+  font-family: Lobster;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.checkout {
+  background: #dfd;
+  font-weight: 100;
+  font-size: 30px;
+  margin: 0;
+  padding: 20px 0px 15px 0px;
+}
+
+.containerChoice {
+  background: #ffb;
+  margin: 0;
+  padding: 20px;
+
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.text {
+  font-size: 25px;
+  margin: 10px;
+  font-weight: 100;
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+/* ORDER */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dfd;
+  background: #dfd;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 20px;
+  margin: 0;
+  border-bottom: 2px solid black;
+}
+
+.containerOrder {
+  width: 100%;
+  max-width: 560px;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* .item > div {
+    padding-top: 10px;
+} */
+
+.containerPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelOk {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-top: 20px;
+}

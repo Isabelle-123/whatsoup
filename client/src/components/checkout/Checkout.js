@@ -16,8 +16,8 @@ const Checkout = () => {
     return (
         <>
             <GoodChoice />
-            <Order />
             <SendToFriend />
+            <Order />
         </>
     )
 }

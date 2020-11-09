@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import FriendContext from '../../../context/for-friend/friendContext'
 import ListFriend from './ListFriend'
-import style from './style.module.css'
+import fStyle from './friendStyles.module.css'
+import gStyle from '../../layout/globalStyle.module.css'
+
 
 const Friend = () => {
     const friendContext = useContext(FriendContext)
@@ -34,9 +36,9 @@ const Friend = () => {
     }
 
     return (
-        <div className={style.container}>
-            <section className={style.inputSection} >
-                <h2 className={style.h2}>Which friend is this treasure for?</h2>
+        <div className={fStyle.container}>
+            <section className={fStyle.inputSection} >
+                <h2 className={gStyle}>Which friend is this treasure for?</h2>
                 <input type="text" placeholder=" Name" />
                 <input type="text" placeholder=" Number" />
             </section>
@@ -45,7 +47,7 @@ const Friend = () => {
                     <ListFriend type={product.type} id={product.id} price={product.price} key={product.id} />
                 ))
             }
-            <section className={style.containerPrice} >
+            <section className={fStyle.containerPrice} >
                 <h3>AMOUNT FOR GIFT</h3>
                 <h3> {total()}</h3>
             </section>

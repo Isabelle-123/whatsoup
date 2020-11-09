@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LinkButtonWide from '../../buttons/LinkButtonWide'
 import Friend from './Friend'
-import style from './style.module.css'
+import fStyle from './friendStyles.module.css'
 
 const SendToFriend = () => {
   const [showFriend, setShowFriend] = useState(false)
@@ -9,7 +9,7 @@ const SendToFriend = () => {
   const toggleFriend = () => setShowFriend(!showFriend)
 
   return (
-      <div className={style.wrapper}>
+      <div className={fStyle.wrapper}>
 
       { !showFriend ? 
       <>
