@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import FriendContext from '../../../context/for-friend/friendContext'
-import style from './style.module.css'
+import fStyle from './friendStyles.module.css'
 
 const ListFriend = (props) => {
     const friendContext = useContext(FriendContext)
@@ -37,16 +37,16 @@ const ListFriend = (props) => {
     }
 
     return (
-        <div className={style.listFriend}>
+        <div className={fStyle.listFriend}>
             <ul key={id}>
-                <li className={style.listItems}>
-                    <div className={style.type}>{type}</div>
-                    <section className={style.counterContainer}>
-                        <button className={style.counterButton} type='submit' onClick={() => handleRemove(type, price)}>-</button>
-                        <div className={style.counter}>{counter(type)}</div>
-                        <button className={style.counterButton} type='submit' onClick={() => handleAdd(type, price)}>+</button>
+                <li className={fStyle.listItems}>
+                    <div className={fStyle.type}>{type}</div>
+                    <section className={fStyle.counterContainer}>
+                        <button className={fStyle.counterButton} type='submit' onClick={() => handleRemove(type, price)}>-</button>
+                        <div className={fStyle.counter}>{counter(type)}</div>
+                        <button className={fStyle.counterButton} type='submit' onClick={() => handleAdd(type, price)}>+</button>
                     </section>
-                    <div className={style.counter}>{price} SEK</div>
+                    <div className={fStyle.counter}>{price} SEK</div>
                 </li>
             </ul>
          </div>

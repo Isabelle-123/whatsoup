@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
-import { StyledOrder } from './StyledOrder'
 import LinkButtonWide from '../buttons/LinkButtonWide'
+import cStyle from './checkoutStyles.module.css'
 
 const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
@@ -46,30 +46,26 @@ const Order = () => {
     const Cancel = () => {
         cancelCheckout()
     }
-console.log(checkout);
 
     return (
-        <StyledOrder>
-            <div className='container'>
-                <h3>YOUR ORDER</h3>
+        <div className={cStyle.containerOrder}>
+            <h3>YOUR ORDER</h3>
 
-                <section className='listItems'>
-                    <div className='item'>{listItems()}</div>
-                    <div className='item'>{listPrice()}</div>
-                </section>
+            <section className={cStyle.listItems}>
+                <div>{listItems()}</div>
+                <div>{listPrice()}</div>
+            </section>
 
-                <section className='container-price'>
-                    <h3>TOTAL PRICE</h3>
-                    <h3>{total()} SEK</h3>
-                </section>
+            <section className={cStyle.containerPrice}>
+                <h3>TOTAL PRICE</h3>
+                <h3>{total()} SEK</h3>
+            </section>
 
-                <section className='cancelOk'>
-                    <LinkButtonWide to='/soup' onClick={Cancel}>CANCEL</LinkButtonWide>
-                    <LinkButtonWide>OK</LinkButtonWide>
-                </section>
-
-            </div>
-        </StyledOrder>
+            <section className={cStyle.cancelOk}>
+                <LinkButtonWide to='/' onClick={Cancel}>CANCEL</LinkButtonWide>
+                <LinkButtonWide>OK</LinkButtonWide>
+            </section>
+        </div>
     )
 }
 
