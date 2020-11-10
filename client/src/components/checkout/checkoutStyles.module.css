@@ -49,14 +49,29 @@
   background: #dfd;
   font-size: 15px;
   font-weight: 200;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   margin: 0;
   border-bottom: 2px solid black;
+}
+
+.containerTotalPrice {
+  width: 100%;
+  max-width: 560px;
+  margin-top: 20px;
 }
 
 .containerOrder {
   width: 100%;
   max-width: 560px;
+  padding: 20px;
+}
+
+.containerOrderFriend {
+  width: 100%;
+  max-width: 560px;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  padding: 20px;
 }
 
 .listItems {
@@ -67,13 +82,23 @@
   margin-bottom: 10px;
 }
 
-/* .item > div {
-    padding-top: 10px;
-} */
+.listItems > div > div {
+  padding-top: 10px;
+}
 
 .containerPrice {
   display: flex;
   justify-content: space-between;
+}
+
+.totalPriceText {
+  margin-top: 6px;
+}
+
+.totalPrice {
+  font-family: 'Lobster';
+  font-weight: 100;
+  font-size: 22px;
 }
 
 .cancelOk {

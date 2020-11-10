@@ -1,11 +1,16 @@
 import React, { useContext } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
-import LinkButtonWide from '../buttons/LinkButtonWide'
+import FriendContext from '../../context/for-friend/friendContext'
 import cStyle from './checkoutStyles.module.css'
+import OrderForFriend from './for-friend/OrderForFriend'
+import OrderTotalPrice from './OrderTotalPrice'
 
 const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
-    const { checkout, cancelCheckout } = checkoutContext
+    const { checkout } = checkoutContext
+
+    const friendContext = useContext(FriendContext)
+    const { friend } = friendContext
 
     const listItems =  () => {
       if (checkout.length > 0) {
@@ -34,41 +39,69 @@ const Order = () => {
         }
     }
 
-    const total = () => {
+
+    const amountForYou = () => {
         if (checkout.length > 0) {
-            const totalPrice = checkout.reduce((acc, curr) => acc + curr.price, 0)
-            return totalPrice
+            const yourOrderTotal = checkout.reduce((acc, curr) => acc + curr.price, 0)
+            return yourOrderTotal
         } else {
             return ''
         }
     }
 
-    const Cancel = () => {
-        cancelCheckout()
-    }
-
     return (
-        <div className={cStyle.wrapper}>
-            <div className={cStyle.containerOrder}>
-                <h3>YOUR ORDER</h3>
+        <>
+            {(() => {
+                if (checkout.length > 0 && friend.length <= 0) {
+                    return (
+                        <div className={cStyle.wrapper}>
+                        <div className={cStyle.containerOrder}>
+                            <h3>YOUR ORDER</h3>
 
-                <section className={cStyle.listItems}>
-                    <div>{listItems()}</div>
-                    <div>{listPrice()}</div>
-                </section>
+                            <section className={cStyle.listItems}>
+                                <div>{listItems()}</div>
+                                <div>{listPrice()}</div>
+                            </section>
+                        </div>
+                        <OrderTotalPrice/>
+                        </div>
+                    )
 
-                <section className={cStyle.containerPrice}>
-                    <h3>TOTAL PRICE</h3>
-                    <h3>{total()} SEK</h3>
-                </section>
+                } else if (checkout.length <= 0 && friend.length > 0) {
+                    return(
+                        <div className={cStyle.wrapper}>
+                        <OrderForFriend/> 
+                        <OrderTotalPrice/>
+                        </div>
+                    )
 
-                <section className={cStyle.cancelOk}>
-                    <LinkButtonWide to='/' onClick={Cancel}>CANCEL</LinkButtonWide>
-                    <LinkButtonWide>OK</LinkButtonWide>
-                </section>
-            </div>
-        </div>
+                } else if (checkout.length > 0 && friend.length > 0) {
+                    return(
+                        <div className={cStyle.wrapper}>
+                        <div className={cStyle.containerOrder}>
+                            <h3>ORDER FOR YOU</h3>
 
+                            <section className={cStyle.listItems}>
+                                <div>{listItems()}</div>
+                                <div>{listPrice()}</div>
+                            </section>
+
+                            <section className={cStyle.containerPrice}>
+                                <h3>AMOUNT FOR YOU:</h3>
+                                <h3>{amountForYou()} SEK</h3>
+                            </section>
+                        </div>
+                        <OrderForFriend/> 
+                        <OrderTotalPrice/>
+                        </div>
+                    )
+                } else {
+                    return (
+                        null
+                    )
+                }
+            })()}
+        </>
     )
 }
 

@@ -3,7 +3,6 @@ import CheckoutContext from './checkoutContext'
 import checkoutReducer from './checkoutReducer'
 import axios from 'axios'
 
-
 import {
   ADD_FOOD,
   CANCEL_CHECKOUT,
@@ -69,8 +68,6 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
   }
 
   
-
-  // Get checkout
   const getCheckout = async () => {
     try {
       let res = await axios.get('https://whatsoup-7c207.firebaseio.com/order.json/')
@@ -93,7 +90,7 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
     }
   }
     
-  // Delete checkout
+
   const cancelCheckout = async id => {
     try {
       await axios.delete('https://whatsoup-7c207.firebaseio.com/order.json/');
@@ -107,7 +104,6 @@ const [state, dispatch] = useReducer(checkoutReducer, initialState)
       // });
     }
   }
-
  
 
   return (

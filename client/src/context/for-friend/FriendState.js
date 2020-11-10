@@ -7,7 +7,8 @@ import axios from 'axios'
 import {
     ADD_TO_FRIEND,
     GET_FRIEND,
-    REMOVE_FRIEND_ITEM
+    REMOVE_FRIEND_ITEM,
+    CANCEL_FRIEND
 } from '../types'
 
 const FriendState = (props) => {
@@ -91,13 +92,29 @@ const FriendState = (props) => {
     }
   }
 
+
+  const cancelFriend = async id => {
+    try {
+      await axios.delete('https://whatsoup-7c207.firebaseio.com/friend.json/');
+      dispatch({ type: CANCEL_FRIEND, payload: id })
+
+    } catch (err) {
+      console.log(err);
+      // dispatch({
+      //   type: CHECKOUT_CANCEL_ERROR, 
+      //   payload: err.response.msg
+      // });
+    }
+  }
+
   return (
       <FriendContext.Provider
         value={{
           friend: state.friend,
           addToFriend,
           getFriend,
-          removeFriendItem
+          removeFriendItem,
+          cancelFriend,
         }}
       > 
     {props.children}
