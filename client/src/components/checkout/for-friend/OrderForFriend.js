@@ -50,10 +50,9 @@ const OrderForFriend = () => {
         }
     }
 
-    // (friend.length < 0) ? <OrderForFriend/> : null
     return (
         friend.length > 0 && (
-            <div className={cStyle.containerOrder}>
+            <div className={cStyle.containerOrderFriend}>
                 <h3>ORDER FOR FRIEND</h3>
 
                 <section className={cStyle.listItems}>
@@ -62,11 +61,11 @@ const OrderForFriend = () => {
                 </section>
 
                 <section className={cStyle.containerPrice}>
-                    <h3>AMOUNT FOR GIFT</h3>
+                    <h3>AMOUNT FOR GIFT:</h3>
                     <h3>{total()} SEK</h3>
                 </section>
             </div>
-    )
+        )
     )
 }
 

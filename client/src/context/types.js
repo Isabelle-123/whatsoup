@@ -8,6 +8,7 @@ export const GET_CHECKOUT = 'GET_CHECKOUT'
 export const ADD_TO_FRIEND = 'ADD_TO_FRIEND'
 export const GET_FRIEND = 'GET_FRIEND'
 export const REMOVE_FRIEND_ITEM = 'REMOVE_FRIEND_ITEM'
+export const CANCEL_FRIEND = 'CANCEL_FRIEND'
 
 export const SET_ALERT = 'SET_ALERT'
 export const REMOVE_ALERT = 'REMOVE_ALERT'

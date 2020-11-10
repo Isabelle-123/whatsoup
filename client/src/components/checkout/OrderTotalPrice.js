@@ -10,34 +10,7 @@ const OrderTotalPrice = () => {
     const { checkout, cancelCheckout } = checkoutContext
 
     const friendContext = useContext(FriendContext)
-    const { friend } = friendContext
-
-    // const totalForYou = () => {
-    //     if (checkout.length > 0) {
-    //         const yourOrderTotal = checkout.reduce((acc, curr) => acc + curr.price, 0)
-    //         return yourOrderTotal
-    //     } else {
-    //         return ''
-    //     }
-    // }
-    
-    // const totalForFriend = () => {
-    //     if (friend.length > 0) {
-    //         const friendOrderTotal = friend.reduce((acc, curr) => acc + curr.price, 0)
-    //         return friendOrderTotal
-    //     } else {
-    //         return ''
-    //     }
-    // }
-
-    // const totalForYouAndFriend = () => {
-    //     if (checkout.length > 0 && friend.length > 0) {
-    //         const totalPrice = checkout.reduce((acc, curr) => acc + curr.price, 0)
-    //         return totalPrice
-    //     } else {
-    //         return ''
-    //     }
-    // }
+    const { friend, cancelFriend } = friendContext
 
     const total = () => {
         if (checkout.length > 0 && friend.length <= 0) {
@@ -57,22 +30,24 @@ const OrderTotalPrice = () => {
     }
 
     const Cancel = () => {
-        cancelCheckout()
+        cancelCheckout();
+        cancelFriend();
     }
 
     return (
         <div className={cStyle.containerTotalPrice}>
             <section className={cStyle.containerPrice}>
-                <h3>TOTAL PRICE</h3>
-                <h3>{total()} SEK</h3>
+                <h3 className={cStyle.totalPriceText}>TOTAL PRICE:</h3>
+                <h3 className={cStyle.totalPrice}>{total()} SEK</h3>
             </section>
-
+            
             <section className={cStyle.cancelOk}>
                 <LinkButtonWide to='/' onClick={Cancel}>CANCEL</LinkButtonWide>
                 <LinkButtonWide>PAY</LinkButtonWide>
             </section>
         </div>
     )
+    
 }
 
 export default OrderTotalPrice

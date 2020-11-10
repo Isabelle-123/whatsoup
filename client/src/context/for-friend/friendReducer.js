@@ -2,6 +2,7 @@ import {
     ADD_TO_FRIEND,
     GET_FRIEND,
     REMOVE_FRIEND_ITEM,
+    CANCEL_FRIEND
 } from '../types'
 
 export default (state, action) => {
@@ -21,6 +22,13 @@ export default (state, action) => {
             return {
                 ...state,
                 friend: state.friend.filter((product, index) => index !== foundIndex)
+            };
+        case CANCEL_FRIEND:
+            return {
+                ...state,
+                friend: state.friend.filter(
+                  order => order.id !== action.payload
+                )
             };
        
         default:
