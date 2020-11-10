@@ -16,27 +16,10 @@ const OrderForFriend = () => {
         
         const counter = entries.map((item, index)=> (
             <div key={index}>
-                {item[1]}
+                {item[1]} {item[0]} 
             </div>
         ))
         return counter
-    }
-
-    const listItems =  () => {
-        let count = friend.reduce((acc, child) => {
-            acc[child.type] = (acc[child.type] || 0) +1;
-            return acc;
-        }, {})
-
-        const entries = Object.entries(count)
-        console.log(count);
-        
-        const items = entries.map((item, index)=> (
-            <div key={index}>
-                {item[0]}
-            </div>
-        ))
-        return items
     }
 
     const listPrice = () => {
@@ -52,7 +35,7 @@ const OrderForFriend = () => {
 
           const price = reducedObjArr.map((item, index)=> (
             <div key={index}>
-                {item.price}
+                {item.price} SEK
             </div>
         ))
         return price
@@ -75,7 +58,6 @@ const OrderForFriend = () => {
 
                 <section className={cStyle.listItems}>
                     <div>{countItems()}</div>
-                    <div>{listItems()}</div>
                     <div>{listPrice()}</div>
                 </section>
 
