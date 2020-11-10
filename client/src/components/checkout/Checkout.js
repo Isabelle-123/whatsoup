@@ -3,7 +3,6 @@ import Order from './Order'
 import GoodChoice from './GoodChoice'
 import CheckoutContext from '../../context/checkout/checkoutContext'
 import SendToFriend from './for-friend/SendToFriend'
-import OrderForFriend from './for-friend/OrderForFriend'
 
 const Checkout = () => {
     const checkoutContext = useContext(CheckoutContext)
@@ -16,7 +15,6 @@ const Checkout = () => {
    
     return (
         <>
-            <OrderForFriend/>
             <GoodChoice />
             <SendToFriend />
             <Order />

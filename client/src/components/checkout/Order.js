@@ -1,11 +1,17 @@
 import React, { useContext } from 'react'
 import CheckoutContext from '../../context/checkout/checkoutContext'
+import FriendContext from '../../context/for-friend/friendContext'
 import LinkButtonWide from '../buttons/LinkButtonWide'
 import cStyle from './checkoutStyles.module.css'
+import OrderForFriend from './for-friend/OrderForFriend'
+import OrderTotalPrice from './OrderTotalPrice'
 
 const Order = () => {
     const checkoutContext = useContext(CheckoutContext)
     const { checkout, cancelCheckout } = checkoutContext
+
+    const friendContext = useContext(FriendContext)
+    const { friend } = friendContext
 
     const listItems =  () => {
       if (checkout.length > 0) {
@@ -34,18 +40,6 @@ const Order = () => {
         }
     }
 
-    const total = () => {
-        if (checkout.length > 0) {
-            const totalPrice = checkout.reduce((acc, curr) => acc + curr.price, 0)
-            return totalPrice
-        } else {
-            return ''
-        }
-    }
-
-    const Cancel = () => {
-        cancelCheckout()
-    }
 
     return (
         <div className={cStyle.wrapper}>
@@ -56,18 +50,13 @@ const Order = () => {
                     <div>{listItems()}</div>
                     <div>{listPrice()}</div>
                 </section>
-
-                <section className={cStyle.containerPrice}>
-                    <h3>TOTAL PRICE</h3>
-                    <h3>{total()} SEK</h3>
-                </section>
-
-                <section className={cStyle.cancelOk}>
-                    <LinkButtonWide to='/' onClick={Cancel}>CANCEL</LinkButtonWide>
-                    <LinkButtonWide>OK</LinkButtonWide>
-                </section>
             </div>
+            <OrderForFriend/> 
+            <OrderTotalPrice/>
         </div>
+
+
+
 
     )
 }

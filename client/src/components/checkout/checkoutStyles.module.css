@@ -54,9 +54,17 @@
   border-bottom: 2px solid black;
 }
 
+.containerTotalPrice {
+  width: 100%;
+  max-width: 560px;
+  margin-top: 20px;
+}
+
 .containerOrder {
   width: 100%;
   max-width: 560px;
+  border-bottom: 1px solid black;
+  padding: 20px;
 }
 
 .listItems {

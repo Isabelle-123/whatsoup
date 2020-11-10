@@ -50,9 +50,9 @@ const OrderForFriend = () => {
         }
     }
 
-
+    // (friend.length < 0) ? <OrderForFriend/> : null
     return (
-        <div className={cStyle.wrapper}>
+        friend.length > 0 && (
             <div className={cStyle.containerOrder}>
                 <h3>ORDER FOR FRIEND</h3>
 
@@ -66,8 +66,7 @@ const OrderForFriend = () => {
                     <h3>{total()} SEK</h3>
                 </section>
             </div>
-        </div>
-
+    )
     )
 }
 
