@@ -4,7 +4,7 @@ import cStyle from '../checkoutStyles.module.css'
 
 const OrderForFriend = () => {
     const friendContext = useContext(FriendContext)
-    const { friend, getFriend } = friendContext
+    const { friend } = friendContext
 
     const countItems = () => {
         let count = friend.reduce((acc, child) => {
@@ -29,6 +29,7 @@ const OrderForFriend = () => {
         }, {})
 
         const entries = Object.entries(count)
+        console.log(count);
         
         const items = entries.map((item, index)=> (
             <div key={index}>
@@ -39,20 +40,22 @@ const OrderForFriend = () => {
     }
 
     const listPrice = () => {
-        let count = friend.reduce((acc, child) => {
-            acc[child.price] = (acc[child.price] || 0) +1;
+       let counts = friend.reduce((acc, curr) => {
+            let count = acc.get(curr.type) || 0;
+            acc.set(curr.type, curr.price + count);
             return acc;
-        }, {})
+          }, new Map());
+          
+          let reducedObjArr = [...counts].map(([type, price]) => {
+            return {type, price}
+          })
 
-        console.log(count);
-        const entries = Object.entries(count)
-
-        if (entries.length > 0) {
-            const totalPrice = entries.reduce((acc, curr) => acc + curr[1], 0)
-            return totalPrice
-        } else {
-            return ''
-        }
+          const price = reducedObjArr.map((item, index)=> (
+            <div key={index}>
+                {item.price}
+            </div>
+        ))
+        return price
     }
 
     const total = () => {
