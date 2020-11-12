@@ -3,7 +3,6 @@ import CheckoutContext from '../../context/checkout/checkoutContext'
 import FriendContext from '../../context/for-friend/friendContext'
 import LinkButtonWide from '../buttons/LinkButtonWide'
 import cStyle from './checkoutStyles.module.css'
-import OrderForFriend from './for-friend/OrderForFriend'
 
 const OrderTotalPrice = () => {
     const checkoutContext = useContext(CheckoutContext)

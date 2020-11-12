@@ -64,13 +64,13 @@
   width: 100%;
   max-width: 560px;
   padding: 20px;
+  border-bottom: 1px solid grey;
 }
 
 .containerOrderFriend {
   width: 100%;
   max-width: 560px;
   border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
   padding: 20px;
 }
 
