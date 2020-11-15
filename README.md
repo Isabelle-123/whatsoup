@@ -24,7 +24,7 @@ The site has frontend (React) and a backend (Node.js).
 
 ## 🧪 Try it out
 
-Clone the project.
+Clone the project
 
 - Run "npm i" in roots folder.
 - Go to client and run "npm i"
