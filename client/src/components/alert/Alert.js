@@ -13,15 +13,10 @@ const Alert = () => {
   const checkoutContext = useContext(CheckoutContext)
   const { getCheckout } = checkoutContext
 
-
   useEffect(() => {
     getCheckout()
     // eslint-disable-next-line
-}, [])
-
-
-
- 
+  }, [])
 
   return (
 
